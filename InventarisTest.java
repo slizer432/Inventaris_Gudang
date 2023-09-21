@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Test
  */
-public class Test {
+public class InventarisTest {
     public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     boolean logIn = false;
