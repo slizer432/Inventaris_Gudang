@@ -75,10 +75,7 @@ public class InventarisTest {
             break;
             // sistem ambil barang
             case 3:
-            System.out.println("Masukkan nama barang: ");
-            sc.nextLine();
-            barang = sc.nextLine();
-            System.out.print("Pilih nomer gudang (1,2,3): ");
+            System.out.print("Pilih nomer gudang yang ingin dikosongkan (1,2,3): ");
             int pilihanG = sc.nextInt();
             switch (pilihanG) {
                 case 1:
@@ -92,8 +89,8 @@ public class InventarisTest {
                     break;
                 default:
                     System.out.println("Masukan tidak valid");
-                break;
-            }    
+                    break;
+            }break;
             // sistem manajemen barang
             case 4:
                 System.out.print("Pilih barang yang akan di-update (1,2,3): ");
