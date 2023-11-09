@@ -15,7 +15,7 @@ public class InventarisTest {
     String statusBarang3 = "Kosong";
     String barang;
 
-    while (true) {
+    while (logIn == false) {
         
         // sistem log in
         while (logIn == false) {
@@ -30,8 +30,8 @@ public class InventarisTest {
                 System.out.println("Log in gagal");        
             }
         }
-    // menu utama
-    while (true) {
+        // menu utama
+    while (logIn == true) {
         System.out.println("-------------------------");
         System.out.println("|   Sistem Inventaris   |");
         System.out.println("-------------------------");
@@ -83,7 +83,7 @@ public class InventarisTest {
                     default:
                     System.out.println("Masukan tidak valid");
                     break;
-            }break;
+                }break;
             // sistem lihat gudang
             case 2:
             System.out.println("Inventaris");
@@ -124,25 +124,25 @@ public class InventarisTest {
             }break;
             // sistem manajemen barang
             case 4:
-                System.out.print("Pilih barang yang akan di-update (1,2,3): ");
-                int pilihanBarang = sc.nextInt();
-                sc.nextLine();
-                System.out.print("Silakan masukan update kondisi barang: ");
-                String update = sc.nextLine();
-                switch (pilihanBarang) {
-                    case 1:
-                    statusBarang1 = update;
-                    break;
-                    case 2:
-                    statusBarang2 = update;
-                    break;
-                    case 3:
-                        statusBarang3 = update;
-                        break;
-                        default:
-                        System.out.println("masukan tidak valid");
-                        break;
-                        // sistem lihat status barang
+            System.out.print("Pilih barang yang akan di-update (1,2,3): ");
+            int pilihanBarang = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Silakan masukan update kondisi barang: ");
+            String update = sc.nextLine();
+            switch (pilihanBarang) {
+                case 1:
+                statusBarang1 = update;
+                break;
+                case 2:
+                statusBarang2 = update;
+                break;
+                case 3:
+                statusBarang3 = update;
+                break;
+                default:
+                System.out.println("masukan tidak valid");
+                break;
+                // sistem lihat status barang
                     }
                     case 5:
                     System.out.println("Kondisi barang");
@@ -156,10 +156,12 @@ public class InventarisTest {
                     
                     // sisten untuk keluar
                     case 7:
-                    System.exit(0);
+                    logIn = false;
+                    sc.nextLine();
+                    break;
                 }
             }
             
+        }
     }
-}
 }
