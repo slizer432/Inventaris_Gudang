@@ -15,7 +15,7 @@ public class InventarisTest {
     String statusBarang3 = "Kosong";
     String barang;
 
-    while (logIn == false) {
+    while (true) {
         
         // sistem log in
         while (logIn == false) {
@@ -30,8 +30,8 @@ public class InventarisTest {
                 System.out.println("Log in gagal");        
             }
         }
-        // menu utama
-    while (logIn == true) {
+    // menu utama
+    while (true) {
         System.out.println("-------------------------");
         System.out.println("|   Sistem Inventaris   |");
         System.out.println("-------------------------");
@@ -83,7 +83,7 @@ public class InventarisTest {
                     default:
                     System.out.println("Masukan tidak valid");
                     break;
-                }break;
+            }break;
             // sistem lihat gudang
             case 2:
             System.out.println("Inventaris");
@@ -104,45 +104,79 @@ public class InventarisTest {
             default:
             System.out.println("Pilihan tidak valid");
             break;
+
             // sistem ambil barang
             case 3:
             System.out.print("Pilih nomer gudang yang ingin dikosongkan (1,2,3): ");
-            int pilihanG = sc.nextInt();
-            switch (pilihanG) {
-                // case 1:
-                // gudang1 = "Kosong";
-                // break;
-                // case 2:
-                // gudang2 = "Kosong";
-                // break;
-                // case 3:
-                // gudang3 = "Kosong";
-                // break;
-                // default:
-                // System.out.println("Masukan tidak valid");
-                // break;
-            }break;
-            // sistem manajemen barang
-            case 4:
-            System.out.print("Pilih barang yang akan di-update (1,2,3): ");
-            int pilihanBarang = sc.nextInt();
-            sc.nextLine();
-            System.out.print("Silakan masukan update kondisi barang: ");
-            String update = sc.nextLine();
-            switch (pilihanBarang) {
+            int BarangGudang = sc.nextInt();
+
+            System.out.println("Barang di Gudang " + BarangGudang + ":");
+            switch (BarangGudang) {
                 case 1:
-                statusBarang1 = update;
+                    for (int i = 0; i < gudang1.length; i++) {
+                    System.out.print(gudang1[i][0] + ", ");
+                } 
+                System.out.println();
+
+                System.out.print("Masukkan barang yang akan dihapus dari Gudang 1:");
+                String HapusGudang1 = sc.nextLine();
+                for (int i = 0; i < gudang1.length; i++) {
+                if (gudang1[i][0] != null && gudang1[i][0].equals(HapusGudang1)) {
+                    gudang1[i][0] = null; 
+                    }
+                }
                 break;
                 case 2:
-                statusBarang2 = update;
+                    for (int i = 0; i < gudang2.length; i++) {
+                    System.out.print(gudang2[i][0] + ", ");
+                }
+                System.out.println();
+                
+                System.out.println("Masukkan barang yang akan dihapus dari Gudang 2:");
+                String HapusGudang2 = sc.nextLine();
+                for (int i = 0; i < gudang2.length; i++) {
+                if (gudang2[i][0] != null && gudang2[i][0].equals(HapusGudang2)) {
+                    gudang2[i][0] = null; 
+                    }
+                }
                 break;
                 case 3:
-                statusBarang3 = update;
+                    for (int i = 0; i < gudang3.length; i++) {
+                    System.out.print(gudang3[i][0] + ", ");
+                }
+                System.out.println();
+                
+                System.out.println("Masukkan barang yang akan dihapus dari Gudang 3:");
+                String HapusGudang3= sc.nextLine();
+                for (int i = 0; i < gudang3.length; i++) {
+                if (gudang3[i][0] != null && gudang3[i][0].equals(HapusGudang3)) {
+                    gudang3[i][0] = null; 
+                    }
+                }
                 break;
-                default:
-                System.out.println("masukan tidak valid");
-                break;
-                // sistem lihat status barang
+            
+            } break;
+            // sistem manajemen barang
+            case 4:
+                System.out.print("Pilih barang yang akan di-update (1,2,3): ");
+                int pilihanBarang = sc.nextInt();
+                sc.nextLine();
+                System.out.print("Silakan masukan update kondisi barang: ");
+                String update = sc.nextLine();
+                switch (pilihanBarang) {
+                    case 1:
+                    statusBarang1 = update;
+                    break;
+                    case 2:
+                    statusBarang2 = update;
+                    break;
+                    case 3:
+                        statusBarang3 = update;
+                        break;
+                        default:
+                        System.out.println("masukan tidak valid");
+                        break;
+                        // sistem lihat status barang
                     }
                     case 5:
                     System.out.println("Kondisi barang");
@@ -161,7 +195,6 @@ public class InventarisTest {
                     break;
                 }
             }
-            
-        }
+        }  
     }
 }
