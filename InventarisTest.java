@@ -117,36 +117,39 @@ public class InventarisTest {
                     System.out.print(gudang1[i][0] + ", ");
                 } 
                 System.out.println();
-
                 System.out.print("Masukkan barang yang akan dihapus dari Gudang 1:");
+                sc.nextLine();
                 String HapusGudang1 = sc.nextLine();
+                
                 for (int i = 0; i < gudang1.length; i++) {
-                if (gudang1[i][0] != null && gudang1[i][0].equals(HapusGudang1)) {
-                    gudang1[i][0] = null; 
+                    if (gudang1[i][0] != null && gudang1[i][0].equals(HapusGudang1)) {
+                        gudang1[i][0] = null; 
                     }
                 }
                 break;
                 case 2:
-                    for (int i = 0; i < gudang2.length; i++) {
+                for (int i = 0; i < gudang2.length; i++) {
                     System.out.print(gudang2[i][0] + ", ");
                 }
                 System.out.println();
                 
                 System.out.println("Masukkan barang yang akan dihapus dari Gudang 2:");
+                sc.nextLine();
                 String HapusGudang2 = sc.nextLine();
                 for (int i = 0; i < gudang2.length; i++) {
-                if (gudang2[i][0] != null && gudang2[i][0].equals(HapusGudang2)) {
-                    gudang2[i][0] = null; 
+                    if (gudang2[i][0] != null && gudang2[i][0].equals(HapusGudang2)) {
+                        gudang2[i][0] = null; 
                     }
                 }
                 break;
                 case 3:
-                    for (int i = 0; i < gudang3.length; i++) {
+                for (int i = 0; i < gudang3.length; i++) {
                     System.out.print(gudang3[i][0] + ", ");
                 }
                 System.out.println();
                 
                 System.out.println("Masukkan barang yang akan dihapus dari Gudang 3:");
+                sc.nextLine();
                 String HapusGudang3= sc.nextLine();
                 for (int i = 0; i < gudang3.length; i++) {
                 if (gudang3[i][0] != null && gudang3[i][0].equals(HapusGudang3)) {
