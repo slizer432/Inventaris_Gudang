@@ -183,6 +183,9 @@ public class InventarisTest {
             } break;
             // sistem manajamen barang
             case 4:
+                System.out.println("-----------------------");
+                System.out.println("| SISTEM UPDATE BARANG |");
+                System.out.println("-----------------------");
                 System.out.println("Pilih gudang(1,2,3): ");
                 BarangGudang = sc.nextInt();
 
