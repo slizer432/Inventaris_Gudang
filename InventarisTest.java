@@ -16,6 +16,10 @@ public class InventarisTest {
         
         // sistem log in
         while (logIn == false) {
+            System.out.println("----------------------------");
+            System.out.println("| SELAMAT DATANG DI SISTEM |");
+            System.out.println("|    INVENTARIS GUDANG     |");
+            System.out.println("----------------------------");
             System.out.print("Masukkan username: ");
             String username = sc.nextLine();
             System.out.print("Masukkan password: ");
