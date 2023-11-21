@@ -45,6 +45,9 @@ public class InventarisTest {
         switch (pilihan) {
             // sistem menambah barang
             case 1:
+            System.out.println("--------------------------");
+            System.out.println("| SISTEM TAMBAHKAN BARANG |");
+            System.out.println("--------------------------");
             System.out.print("Masukkan nama barang: ");
             sc.nextLine();
             barang = sc.nextLine();
@@ -83,7 +86,9 @@ public class InventarisTest {
             }break;
             // sistem lihat gudang
             case 2:
-            System.out.println("Inventaris");
+            System.out.println("-----------------------");
+            System.out.println("| SISTEM LIHAT GUDANG |");
+            System.out.println("-----------------------");
             System.out.print("Gudang 1: ");
             for (int i = 0; i < gudang1.length; i++) {
                 System.out.print(gudang1[i][0] + ", ");
@@ -104,6 +109,9 @@ public class InventarisTest {
 
             // sistem ambil barang
             case 3:
+            System.out.println("-----------------------");
+            System.out.println("| SISTEM AMBIL BARANG |");
+            System.out.println("-----------------------");
             System.out.print("Pilih nomer gudang yang ingin dikosongkan (1,2,3): ");
             int BarangGudang = sc.nextInt();
 
@@ -218,7 +226,7 @@ public class InventarisTest {
                     sc.nextLine();
                     break;
                     
-                    // sisten untuk keluar
+                    // sistem untuk keluar
                     case 7:
                     System.exit(0);
                     break;
