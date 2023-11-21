@@ -126,8 +126,6 @@ public class InventarisTest {
                 System.out.println("Masukkan nama barang yang akan dihapus dari Gudang 1: ");
                 sc.nextLine();
                 String HapusGudang1 = sc.nextLine();
-                System.out.print("Masukkan kode unik barang: ");
-                int KodeUnik = sc.nextInt();
                 System.out.print("Barang berhasil terhapus!");
                 System.out.println();
                 
@@ -147,8 +145,6 @@ public class InventarisTest {
                 System.out.println("Masukkan nama barang yang akan dihapus dari Gudang 2:");
                 sc.nextLine();
                 String HapusGudang2 = sc.nextLine();
-                System.out.print("Masukkan kode unik barang: ");
-                KodeUnik = sc.nextInt();
                 System.out.print("Barang berhasil terhapus!");
                 System.out.println();
 
@@ -168,8 +164,6 @@ public class InventarisTest {
                 System.out.println("Masukkan barang yang akan dihapus dari Gudang 3:");
                 sc.nextLine();
                 String HapusGudang3= sc.nextLine();
-                System.out.print("Masukkan kode unik barang: ");
-                KodeUnik = sc.nextInt();
                 System.out.print("Barang berhasil terhapus!");
                 System.out.println();
 
