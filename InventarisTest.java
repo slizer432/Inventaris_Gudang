@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class InventarisTest {
 
     public static void main(String[] args) {
@@ -11,11 +11,16 @@ public class InventarisTest {
     String gudang2[][] = new String[15][4];
     String gudang3[][] = new String[15][4];
     String barang;
+    ArrayList<String> history = new ArrayList<>();
 
     while (true) {
         
         // sistem log in
         while (logIn == false) {
+            System.out.println("----------------------------");
+            System.out.println("| SELAMAT DATANG DI SISTEM |");
+            System.out.println("|    INVENTARIS GUDANG     |");
+            System.out.println("----------------------------");
             System.out.print("Masukkan username: ");
             String username = sc.nextLine();
             System.out.print("Masukkan password: ");
@@ -45,6 +50,9 @@ public class InventarisTest {
         switch (pilihan) {
             // sistem menambah barang
             case 1:
+            System.out.println("--------------------------");
+            System.out.println("| SISTEM TAMBAHKAN BARANG |");
+            System.out.println("--------------------------");
             System.out.print("Masukkan nama barang: ");
             sc.nextLine();
             barang = sc.nextLine();
@@ -57,6 +65,7 @@ public class InventarisTest {
                             continue;
                         }
                         gudang1[i][0] = barang;
+                        history.add("Menambahkan " + barang + " ke Gudang 1");
                         break;
                     }
                     break;
@@ -66,6 +75,7 @@ public class InventarisTest {
                             continue;
                         }
                         gudang2[i][0] = barang;
+                        history.add("Menambahkan " + barang + " ke Gudang 2");
                         break;
                     }
                     break;
@@ -75,6 +85,7 @@ public class InventarisTest {
                             continue;
                         }
                         gudang3[i][0] = barang;
+                        history.add("Menambahkan " + barang + " ke Gudang 3");
                         break;
                     }
                     default:
@@ -83,7 +94,9 @@ public class InventarisTest {
             }break;
             // sistem lihat gudang
             case 2:
-            System.out.println("Inventaris");
+            System.out.println("-----------------------");
+            System.out.println("| SISTEM LIHAT GUDANG |");
+            System.out.println("-----------------------");
             System.out.print("Gudang 1: ");
             for (int i = 0; i < gudang1.length; i++) {
                 System.out.print(gudang1[i][0] + ", ");
@@ -104,41 +117,54 @@ public class InventarisTest {
 
             // sistem ambil barang
             case 3:
+            System.out.println("-----------------------");
+            System.out.println("| SISTEM AMBIL BARANG |");
+            System.out.println("-----------------------");
             System.out.print("Pilih nomer gudang yang ingin dikosongkan (1,2,3): ");
             int BarangGudang = sc.nextInt();
 
             System.out.println("Barang di Gudang " + BarangGudang + ":");
             switch (BarangGudang) {
+
                 case 1:
                     for (int i = 0; i < gudang1.length; i++) {
                     System.out.print(gudang1[i][0] + ", ");
                 } 
                 System.out.println();
-                System.out.print("Masukkan barang yang akan dihapus dari Gudang 1:");
+                System.out.println("Masukkan nama barang yang akan dihapus dari Gudang 1: ");
                 sc.nextLine();
-                String HapusGudang1 = sc.nextLine();
+                String HapusBarang = sc.nextLine();
+                System.out.print("Barang berhasil terhapus!");
+                System.out.println();
                 
                 for (int i = 0; i < gudang1.length; i++) {
-                    if (gudang1[i][0] != null && gudang1[i][0].equals(HapusGudang1)) {
+                    if (gudang1[i][0] != null && gudang1[i][0].equals(HapusBarang)) {
                         gudang1[i][0] = null; 
                     }
                 }
+                history.add("Menghapus " + HapusBarang + " dari Gudang 1");
                 break;
+
                 case 2:
                 for (int i = 0; i < gudang2.length; i++) {
                     System.out.print(gudang2[i][0] + ", ");
                 }
                 System.out.println();
                 
-                System.out.println("Masukkan barang yang akan dihapus dari Gudang 2:");
+                System.out.println("Masukkan nama barang yang akan dihapus dari Gudang 2:");
                 sc.nextLine();
-                String HapusGudang2 = sc.nextLine();
+                HapusBarang = sc.nextLine();
+                System.out.print("Barang berhasil terhapus!");
+                System.out.println();
+
                 for (int i = 0; i < gudang2.length; i++) {
-                    if (gudang2[i][0] != null && gudang2[i][0].equals(HapusGudang2)) {
+                    if (gudang2[i][0] != null && gudang2[i][0].equals(HapusBarang)) {
                         gudang2[i][0] = null; 
                     }
                 }
+                history.add("Menghapus " + HapusBarang + " dari Gudang 2");
                 break;
+
                 case 3:
                 for (int i = 0; i < gudang3.length; i++) {
                     System.out.print(gudang3[i][0] + ", ");
@@ -147,17 +173,24 @@ public class InventarisTest {
                 
                 System.out.println("Masukkan barang yang akan dihapus dari Gudang 3:");
                 sc.nextLine();
-                String HapusGudang3= sc.nextLine();
+                HapusBarang = sc.nextLine();
+                System.out.print("Barang berhasil terhapus!");
+                System.out.println();
+
                 for (int i = 0; i < gudang3.length; i++) {
-                if (gudang3[i][0] != null && gudang3[i][0].equals(HapusGudang3)) {
+                if (gudang3[i][0] != null && gudang3[i][0].equals(HapusBarang)) {
                     gudang3[i][0] = null; 
                     }
                 }
+                history.add("Menghapus " + HapusBarang + " dari Gudang 3");
                 break;
             
             } break;
-            // sistem manajemen barang
+            // sistem manajamen barang
             case 4:
+                System.out.println("-----------------------");
+                System.out.println("| SISTEM UPDATE BARANG |");
+                System.out.println("-----------------------");
                 System.out.println("Pilih gudang(1,2,3): ");
                 BarangGudang = sc.nextInt();
 
@@ -180,9 +213,9 @@ public class InventarisTest {
                     break;
                 
                     case 5:
-                    System.out.println("=======================");
-                    System.out.println("        Pelaporan      ");
-                    System.out.println("=======================");
+                    System.out.println("-----------------------");
+                    System.out.println("| SISTEM UPDATE BARANG |");
+                    System.out.println("-----------------------");
                     System.out.println("1. Cek kondisi barang");
                     System.out.println("2. Riwayat");
                     System.out.print("Pilih Menu: ");
@@ -191,9 +224,15 @@ public class InventarisTest {
                         case 1:
                         
                         case 2:
+                        System.out.println("-----------------------");
+                        System.out.println("|       RIWAYAT       |");
+                        System.out.println("-----------------------");
+                        for (String entry : history) {
+                        System.out.println(entry);
+                        }
 
                         default:
-                            break;
+                        break;
                     }
 
                     case 6:
@@ -201,7 +240,7 @@ public class InventarisTest {
                     sc.nextLine();
                     break;
                     
-                    // sisten untuk keluar
+                    // sistem untuk keluar
                     case 7:
                     System.exit(0);
                     break;
