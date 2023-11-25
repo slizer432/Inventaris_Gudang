@@ -56,6 +56,8 @@ public class InventarisTest {
             System.out.print("Masukkan nama barang: ");
             sc.nextLine();
             barang = sc.nextLine();
+            int angkaAcak = (int) (Math.random() * 100000) + 1;
+            System.out.println("Kode unik barang: "+angkaAcak);
             System.out.print("Pilih nomer gudang (1,2,3): ");
             int pilihanGudang = sc.nextInt();
             switch (pilihanGudang) {
