@@ -220,6 +220,7 @@ public class InventarisTest {
                     System.out.println("-----------------------");
                     System.out.println("1. Cek kondisi barang");
                     System.out.println("2. Riwayat");
+                    System.out.println("3. Cari barang");
                     System.out.print("Pilih Menu: ");
                     int pilihan2 = sc.nextInt();
                     switch (pilihan2) {
@@ -233,9 +234,87 @@ public class InventarisTest {
                         System.out.println(entry);
                         }
 
-                        default:
-                        break;
+                        case 3:
+                        
+                        // sistem untuk memilih metode pencarian. bisa berupa nama barang atau kode unik
+                        System.out.println("--------------------------------");
+                        System.out.println("|       SISTEM PENCARIAN       |");
+                        System.out.println("--------------------------------");
+                        System.out.println("Pilih metode pencarian");
+                        System.out.println("1. Berdasarkan nama");
+                        System.out.println("2. Berdasarkan kode unik");
+                        System.out.print("Pilih metode: ");
+                        int metode = sc.nextInt();
+
+                        switch (metode) {
+                            
+                            // sistem pencarian barang menggunakan nama barang
+                            case 1:
+
+                            // pencarian di gudang 1
+                            System.out.print("Masukkan keyword (nama barang): ");
+                            sc.nextLine();
+                            String keywordNamaBarang = sc.nextLine();
+                            int number = 1;
+                            for (int i = 0; i < gudang1.length; i++) {
+                                if (keywordNamaBarang.equalsIgnoreCase(gudang1[i][0])) {
+                                    System.out.println(number +". "+  gudang1[i][0] + " Terdapat pada gudang 1 di urutan ke-" + (i+1)+" dengan kode unik " + gudang1[i][1]);
+                                    number++;
+                                }
+                            }
+                            
+                            // pencarian di gudang 2                            
+                            for (int i = 0; i < gudang2.length; i++) {
+                                if (keywordNamaBarang.equalsIgnoreCase(gudang2[i][0])) {
+                                    System.out.println("GUDANG 2");
+                                    System.out.println(number +". "+  gudang2[i][0] + " Terdapat pada gudang 2 di urutan ke-" + (i+1) + " dengan kode unik " + gudang2[i][1]);
+                                    number++;
+                                }
+                            }
+                            
+                            // pencarian di gudang 3
+                            for (int i = 0; i < gudang3.length; i++) {
+                                if (keywordNamaBarang.equalsIgnoreCase(gudang3[i][0])) {
+                                    System.out.println(number +". "+  gudang3[i][0]  + " Terdapat pada gudang 3 di urutan ke-"+(i+1)+ " dengan kode unik " + gudang3[i][1]);
+                                    number++;
+                                }
+                            }
+                            number = 1;
+                            break;
+                            
+                            // sistem pencarian barang menggunakan kode unik
+                            case 2:
+                            System.out.println("Masukkan keyword (kode unik barang): ");
+                            sc.nextLine();
+                            String keywordKodeUnik = sc.nextLine();
+
+                            // sistem pencarian di gudang 1
+                            for (int i = 0; i < gudang1.length; i++) {
+                                if (keywordKodeUnik.equalsIgnoreCase(gudang1[i][1])) {
+                                    System.out.println("Barang yang anda cari terdapat di gudang 1 di urutan ke-"+ (i+1));
+                                }
+                            }
+                            // sistem pencarian di gudang 2
+                            for (int i = 0; i < gudang2.length; i++) {
+                                if (keywordKodeUnik.equalsIgnoreCase(gudang2[i][1])) {
+                                    System.out.println("Barang yang anda cari terdapat di gudang 2 di urutan ke-"+ (i+1));
+                                }
+                            }
+                            // sistem pencarian di gudang 3
+                            for (int i = 0; i < gudang3.length; i++) {
+                                if (keywordKodeUnik.equalsIgnoreCase(gudang3[i][1])) {
+                                    System.out.println("Barang yang anda cari terdapat di gudang 3 di urutan ke-"+ (i+1));
+                                }
+                            }
+                            break;
+
+                            default:
+                            System.out.println("Pilihan tidak valid");
+                                break;
+                        }
+
                     }
+                    break;
 
                     case 6:
                     logIn = false;
