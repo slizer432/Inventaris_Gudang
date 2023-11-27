@@ -273,6 +273,8 @@ public class InventarisTest {
                     System.out.print("Silahkan Masukkan nama user anda: ");
                     gudang1[i][3] = sc.nextLine();
                     System.out.println("Barang Berhasil di Update");
+                    riwayat[indeksRiwayat] = "Mengupdate " + barangLama + " dari Gudang 1";
+                    indeksRiwayat++;
                     break;
                     }
                 }break;
@@ -291,13 +293,15 @@ public class InventarisTest {
                     if (gudang2[i][0]!= null && gudang2[i][0].equals(barangLama)) {
                     System.out.print("Silahkan update nama barang: ");
                     gudang2[i][0] = sc.nextLine();
-                    System.out.print("Silahkan Update kondisi barang(Rusak/Baik): ");
+                    System.out.print("Silahkan Update kondisi barang (Rusak/Baik): ");
                     gudang2[i][1] = sc.nextLine();
                     System.out.print("Silahkan Update deskripsi barang: ");
                     gudang2[i][2] = sc.nextLine();
                     System.out.print("Silahkan Masukkan nama user anda: ");
                     gudang2[i][3] = sc.nextLine();
                     System.out.println("Barang Berhasil di Update");
+                    riwayat[indeksRiwayat] = "Mengupdate " + barangLama + " dari Gudang 2";
+                    indeksRiwayat++;
                     break;
                     }
                 }break;
@@ -316,13 +320,15 @@ public class InventarisTest {
                     if (gudang3[i][0]!= null && gudang3[i][0].equals(barangLama)) {
                     System.out.print("Silahkan update nama barang: ");
                     gudang3[i][0] = sc.nextLine();
-                    System.out.print("Silahkan Update kondisi barang(Rusak/Baik): ");
+                    System.out.print("Silahkan Update kondisi barang (Rusak/Baik): ");
                     gudang3[i][1] = sc.nextLine();
                     System.out.print("Silahkan Update deskripsi barang: ");
                     gudang3[i][2] = sc.nextLine();
                     System.out.print("Silahkan Masukkan nama user anda: ");
                     gudang3[i][3] = sc.nextLine();
                     System.out.println("Barang Berhasil di Update");
+                    riwayat[indeksRiwayat] = "Mengupdate " + barangLama + " dari Gudang 3";
+                    indeksRiwayat++;
                     break;
                     }
                 }break;
