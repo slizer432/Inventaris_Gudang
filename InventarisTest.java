@@ -334,7 +334,7 @@ public class InventarisTest {
 
                 case 5:
                 System.out.println("-----------------------");
-                System.out.println("| SISTEM UPDATE BARANG |");
+                System.out.println("|      PELAPORAN      |");
                 System.out.println("-----------------------");
                 System.out.println("1. Cek kondisi barang");
                 System.out.println("2. Riwayat");
