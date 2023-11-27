@@ -10,7 +10,7 @@ public class InventarisTest {
     String gudang2[][] = new String[15][4];
     String gudang3[][] = new String[15][4];
     String barang;
-    String[] riwayat = new String[100];
+    String[] riwayat = new String[20];
     int indeksRiwayat = 0;
 
     while (true) {
