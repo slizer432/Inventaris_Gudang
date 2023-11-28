@@ -61,7 +61,7 @@ public class InventarisTest {
             System.out.println("Kode unik barang: "+angkaAcak);
             System.out.print("Pilih nomer gudang (1,2,3): ");
             int pilihanGudang = sc.nextInt();
-            riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + "Oleh " + username;
+            riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + " oleh " + username;
             indeksRiwayat++;
             switch (pilihanGudang) {
                 case 1:
@@ -166,7 +166,7 @@ public class InventarisTest {
                         gudang1[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dari Gudang 1" + "oleh" + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dari Gudang 1" + " oleh " + username;
                 indeksRiwayat++;
                 } break;
 
@@ -207,7 +207,7 @@ public class InventarisTest {
                         gudang2[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dari Gudang 2" + "oleh " + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dari Gudang 2" + " oleh " + username;
                 indeksRiwayat++;
                 } break;
                 case 3:
@@ -248,7 +248,7 @@ public class InventarisTest {
                         gudang3[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dari Gudang 3" + "oleh" + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dari Gudang 3" + " oleh " + username;
                 indeksRiwayat++;
                 } break;
 
@@ -375,9 +375,10 @@ public class InventarisTest {
                         System.out.println("--------------------------------");
                         System.out.println("|       SISTEM PENCARIAN       |");
                         System.out.println("--------------------------------");
-                        System.out.println("Pilih metode pencarian");
-                        System.out.println("1. Berdasarkan nama");
-                        System.out.println("2. Berdasarkan kode unik");
+                        System.out.println("|Pilih metode pencarian        |");
+                        System.out.println("|1. Berdasarkan nama           |");
+                        System.out.println("|2. Berdasarkan kode unik      |");
+                        System.out.println("--------------------------------");
                         System.out.print("Pilih metode: ");
                         int metode = sc.nextInt();
 
@@ -418,7 +419,7 @@ public class InventarisTest {
                             
                             // sistem pencarian barang menggunakan kode unik
                             case 2:
-                            System.out.println("Masukkan keyword (kode unik barang): ");
+                            System.out.print("Masukkan keyword (kode unik barang): ");
                             sc.nextLine();
                             String keywordKodeUnik = sc.nextLine();
 
