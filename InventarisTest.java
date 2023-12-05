@@ -107,6 +107,8 @@ public class InventarisTest {
             System.out.println("Kode unik barang: "+angkaAcak);
             System.out.print("Pilih nomer gudang (1,2,3): ");
             int pilihanGudang = sc.nextInt();
+            System.out.print("Masukkan deskripsi barang");
+            String descBarang = sc.nextLine();
             riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + " oleh " + username;
             indeksRiwayat++;
             switch (pilihanGudang) {
@@ -117,6 +119,8 @@ public class InventarisTest {
                         }
                         gudang1[i][0] = barang;
                         gudang1[i][1] = String.valueOf(angkaAcak);
+                        gudang1[i][2] = "Baik";
+                        gudang1[i][3] = descBarang
                         break;
                     }
                     break;
@@ -127,6 +131,8 @@ public class InventarisTest {
                         }
                         gudang2[i][0] = barang;
                         gudang2[i][1] = String.valueOf(angkaAcak);
+                        gudang2[i][2] = "baik";
+                        gudang2[i][3] = descBarang;
                         break;
                     }
                     break;
@@ -137,6 +143,8 @@ public class InventarisTest {
                         }
                         gudang3[i][0] = barang;
                         gudang3[i][1] = String.valueOf(angkaAcak);
+                        gudang3[i][2] = "baik";
+                        gudang3[i][3] = descBarang;
                         break;
                     }
                     default:
