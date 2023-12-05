@@ -1,8 +1,11 @@
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.LocalTime;
 public class InventarisTest {
 
     public static void main(String[] args) {
-    // sistem Log in
+    LocalDate tanggal = LocalDate.now();
+    LocalTime waktu = LocalTime.now();
     Scanner sc = new Scanner(System.in);
     boolean logIn = false;
     int pilihan;
@@ -111,7 +114,7 @@ public class InventarisTest {
             System.out.print("Masukkan deskripsi barang: ");
             sc.nextLine();
             String descBarang = sc.nextLine();
-            riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + " oleh " + username;
+            riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
             indeksRiwayat++;
             switch (pilihanGudang) {
                 case 1:
@@ -222,7 +225,7 @@ public class InventarisTest {
                         gudang1[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dari Gudang 1" + " oleh " + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dari Gudang 1" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
 
@@ -263,7 +266,7 @@ public class InventarisTest {
                         gudang2[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dari Gudang 2" + " oleh " + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dari Gudang 2" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
                 case 3:
@@ -304,7 +307,7 @@ public class InventarisTest {
                         gudang3[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dari Gudang 3" + " oleh " + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dari Gudang 3" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
 
