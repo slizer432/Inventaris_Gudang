@@ -90,12 +90,13 @@ public class InventarisTest {
             System.out.print("Masukkan nama barang: ");
             sc.nextLine();
             barang = sc.nextLine();
+            int angkaAcak;
             do {
-                angkaAcak = (int) (random.nextInt() * 100000) + 1;
+                angkaAcak = (int) (Math.random() * 100000) + 1;
 
                 boolean cekkodeUnik = false;
-                for (int i = 0; i < 100000; i++) {
-                    if (angkaAcak == kodeUnik[i]) {
+                for (int i = 0; i < gudang1.length; i++) {
+                    if (String.valueOf(angkaAcak) == gudang1[i][2] || String.valueOf(angkaAcak) == gudang2[i][2] || String.valueOf(angkaAcak) == gudang3[i][2]) {
                         cekkodeUnik = true;
                         break;
                     }
@@ -107,7 +108,8 @@ public class InventarisTest {
             System.out.println("Kode unik barang: "+angkaAcak);
             System.out.print("Pilih nomer gudang (1,2,3): ");
             int pilihanGudang = sc.nextInt();
-            System.out.print("Masukkan deskripsi barang");
+            System.out.print("Masukkan deskripsi barang: ");
+            sc.nextLine();
             String descBarang = sc.nextLine();
             riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + " oleh " + username;
             indeksRiwayat++;
@@ -120,7 +122,7 @@ public class InventarisTest {
                         gudang1[i][0] = barang;
                         gudang1[i][1] = String.valueOf(angkaAcak);
                         gudang1[i][2] = "Baik";
-                        gudang1[i][3] = descBarang
+                        gudang1[i][3] = descBarang;
                         break;
                     }
                     break;
