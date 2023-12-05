@@ -1,8 +1,11 @@
 import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.LocalTime;
 public class InventarisTest {
 
     public static void main(String[] args) {
-    // sistem Log in
+    LocalDate tanggal = LocalDate.now();
+    LocalTime waktu = LocalTime.now();
     Scanner sc = new Scanner(System.in);
     boolean logIn = false;
     int pilihan;
@@ -90,12 +93,13 @@ public class InventarisTest {
             System.out.print("Masukkan nama barang: ");
             sc.nextLine();
             barang = sc.nextLine();
+            int angkaAcak;
             do {
-                angkaAcak = (int) (random.nextInt() * 100000) + 1;
+                angkaAcak = (int) (Math.random() * 100000) + 1;
 
                 boolean cekkodeUnik = false;
-                for (int i = 0; i < 100000; i++) {
-                    if (angkaAcak == kodeUnik[i]) {
+                for (int i = 0; i < gudang1.length; i++) {
+                    if (String.valueOf(angkaAcak) == gudang1[i][2] || String.valueOf(angkaAcak) == gudang2[i][2] || String.valueOf(angkaAcak) == gudang3[i][2]) {
                         cekkodeUnik = true;
                         break;
                     }
@@ -107,9 +111,10 @@ public class InventarisTest {
             System.out.println("Kode unik barang: "+angkaAcak);
             System.out.print("Pilih nomer gudang (1,2,3): ");
             int pilihanGudang = sc.nextInt();
-            System.out.print("Masukkan deskripsi barang");
+            System.out.print("Masukkan deskripsi barang: ");
+            sc.nextLine();
             String descBarang = sc.nextLine();
-            riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + " oleh " + username;
+            riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
             indeksRiwayat++;
             switch (pilihanGudang) {
                 case 1:
@@ -120,7 +125,7 @@ public class InventarisTest {
                         gudang1[i][0] = barang;
                         gudang1[i][1] = String.valueOf(angkaAcak);
                         gudang1[i][2] = "Baik";
-                        gudang1[i][3] = descBarang
+                        gudang1[i][3] = descBarang;
                         break;
                     }
                     break;
@@ -220,7 +225,7 @@ public class InventarisTest {
                         gudang1[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dari Gudang 1" + " oleh " + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dari Gudang 1" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
 
@@ -261,7 +266,7 @@ public class InventarisTest {
                         gudang2[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dari Gudang 2" + " oleh " + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dari Gudang 2" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
                 case 3:
@@ -302,7 +307,7 @@ public class InventarisTest {
                         gudang3[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dari Gudang 3" + " oleh " + username;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dari Gudang 3" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
 
