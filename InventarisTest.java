@@ -90,7 +90,20 @@ public class InventarisTest {
             System.out.print("Masukkan nama barang: ");
             sc.nextLine();
             barang = sc.nextLine();
-            int angkaAcak = (int) (Math.random() * 100000) + 1;
+            do {
+                angkaAcak = (int) (random.nextInt() * 100000) + 1;
+
+                boolean cekkodeUnik = false;
+                for (int i = 0; i < 100000; i++) {
+                    if (angkaAcak == kodeUnik[i]) {
+                        cekkodeUnik = true;
+                        break;
+                    }
+                }
+                if (!cekkodeUnik) {
+                    break;
+                }
+            } while (true);
             System.out.println("Kode unik barang: "+angkaAcak);
             System.out.print("Pilih nomer gudang (1,2,3): ");
             int pilihanGudang = sc.nextInt();
@@ -285,7 +298,10 @@ public class InventarisTest {
                 indeksRiwayat++;
                 } break;
 
-            } break;
+                default:
+                System.out.println("Barang Tidak Ditemukan");
+                break;
+            }break;
                 
             // sistem Update Barang
             case 4:
