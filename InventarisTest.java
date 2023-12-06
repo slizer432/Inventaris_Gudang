@@ -90,15 +90,8 @@ public class InventarisTest {
             System.out.println("================================");
             System.out.println("|       TAMBAHKAN BARANG       |");
             System.out.println("================================");
-            System.out.print("Masukkan jumlah barang yang akan ditambahkan: ");
-            int jumlahBarang = sc.nextInt();
-
-            sc.nextLine();
-
-            for (int j = 0; j < jumlahBarang; j++) {
             System.out.print("Masukkan nama barang: ");
             barang = sc.nextLine();
-            
             int angkaAcak;
             do {
                 angkaAcak = (int) (Math.random() * 100000) + 1;
@@ -163,8 +156,7 @@ public class InventarisTest {
                     default:
                     System.out.println("Masukan tidak valid");
                     break; 
-                }
-            } break;
+                } break;
             // sistem lihat gudang
             case 2:
             System.out.println("================================");
@@ -234,7 +226,7 @@ public class InventarisTest {
                         gudang1[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dari Gudang 1" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Menghapus barang dengan kode unik " + kodeUnik + " dari Gudang 1" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
 
@@ -275,7 +267,7 @@ public class InventarisTest {
                         gudang2[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dari Gudang 2" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Menghapus barang dengan kode unik " + kodeUnik + " dari Gudang 2" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
                 case 3:
@@ -316,7 +308,7 @@ public class InventarisTest {
                         gudang3[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dari Gudang 3" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Menghapus barang dengan kode unik " + kodeUnik + " dari Gudang 3" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
 
