@@ -449,21 +449,82 @@ public class InventarisTest {
                 }break;
 
                 case 5:
+                //sistem pelaporan
                 System.out.println("================================");
                 System.out.println("|          PELAPORAN           |");
                 System.out.println("================================");
-                System.out.println("|    1. Cek kondisi barang     |");
+                System.out.println("|    1. Lihat Gudang           |");
                 System.out.println("|    2. Riwayat                |");
                 System.out.println("|    3. Cari barang            |");
                 System.out.println("================================");
                 System.out.print("Pilih Menu: ");
                 int pilihan2 = sc.nextInt();
                 switch (pilihan2) {
+                    //sistem lihat gudang beserta atributnya
+                    case 1:
+                    System.out.println("=======================");
+                    System.out.println("| SISTEM LIHAT GUDANG |");
+                    System.out.println("=======================");
+                    System.out.print("Pilih gudang(1,2,3): ");
+                    int pilhGud = sc.nextInt();
+                    switch (pilhGud) {
                         case 1:
-                        System.out.println("================================");
-                        System.out.println("|       CEK KONDISI BARANG     |");
-                        System.out.println("================================");
+                        System.out.println("=============================================================");
+                        System.out.println("|                    LIST BARANG GUDANG 1                   |");
+                        System.out.println("=============================================================");
+                        System.out.printf("| %-12s | %-12s | %-12s | %-12s |\n","Nama","Kode","Kondisi","Deskripsi");
+                        System.out.println("=============================================================");
+                        for (int i = 0; i < gudang1.length; i++) {
+                            if (gudang1[i][0] != null) {
+                                System.out.printf("| %-12s | %-12s | %-12s | %-12s |\n",gudang1[i][0],gudang1[i][1],gudang1[i][2],gudang1[i][3]);
+                            }
+                        }
+                        System.out.print("Ketik apapun untuk kembali ke menu: ");
+                        String kembali = sc.nextLine();
+                        sc.nextLine();
+                        if (kembali.equalsIgnoreCase("")) {
                             break;
+                        }
+                        case 2:
+                        System.out.println("=============================================================");
+                        System.out.println("|                    LIST BARANG GUDANG 2                   |");
+                        System.out.println("=============================================================");
+                        System.out.printf("| %-12s | %-12s | %-12s | %-12s |\n","Nama","Kode","Kondisi","Deskripsi");
+                        System.out.println("=============================================================");
+                        for (int i = 0; i < gudang2.length; i++) {
+                            if (gudang2[i][0] != null) {
+                                System.out.printf("| %-12s | %-12s | %-12s | %-12s |\n",gudang2[i][0],gudang2[i][1],gudang2[i][2],gudang2[i][3]);
+                            }
+                        }
+                        System.out.print("Ketik apapun untuk kembali ke menu: ");
+                        kembali = sc.nextLine();
+                        sc.nextLine();
+                        if (kembali.equalsIgnoreCase("")) {
+                            break;
+                        }
+                        case 3:
+                        System.out.println("=============================================================");
+                        System.out.println("|                    LIST BARANG GUDANG 3                   |");
+                        System.out.println("=============================================================");
+                        System.out.printf("| %-12s | %-12s | %-12s | %-12s |\n","Nama","Kode","Kondisi","Deskripsi");
+                        System.out.println("=============================================================");
+                        for (int i = 0; i < gudang3.length; i++) {
+                            if (gudang3[i][0] != null) {
+                                System.out.printf("| %-12s | %-12s | %-12s | %-12s |\n",gudang3[i][0],gudang3[i][1],gudang3[i][2],gudang3[i][3]);
+                            }
+                        }
+                        System.out.print("Ketik apapun untuk kembali ke menu: ");
+                        kembali = sc.nextLine();
+                        sc.nextLine();
+                        if (kembali.equalsIgnoreCase("")) {
+                            break;
+                        }
+
+                    }break;
+                
+                    default:
+                    System.out.println("Pilihan tidak valid");
+                    break;
                         case 2:
                         System.out.println("================================");
                         System.out.println("|           RIWAYAT            |");
