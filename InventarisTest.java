@@ -91,6 +91,10 @@ public class InventarisTest {
             System.out.println("|       TAMBAHKAN BARANG       |");
             System.out.println("================================");
             System.out.print("Masukkan nama barang: ");
+<<<<<<< Updated upstream
+=======
+            sc.nextLine();
+>>>>>>> Stashed changes
             barang = sc.nextLine();
             int angkaAcak;
             do {
@@ -460,10 +464,69 @@ public class InventarisTest {
                 int pilihan2 = sc.nextInt();
                 switch (pilihan2) {
                         case 1:
+<<<<<<< Updated upstream
                         System.out.println("================================");
                         System.out.println("|       CEK KONDISI BARANG     |");
                         System.out.println("================================");
                             break;
+=======
+                        System.out.println("===============================================================================");
+                        System.out.println("|                            LIST BARANG GUDANG 1                             |");
+                        System.out.println("===============================================================================");
+                        System.out.printf("| %-12s | %-12s | %-12s | %-30s |\n","Nama","Kode","Kondisi","Deskripsi");
+                        System.out.println("===============================================================================");
+                        for (int i = 0; i < gudang1.length; i++) {
+                            if (gudang1[i][0] != null) {
+                                System.out.printf("| %-12s | %-12s | %-12s | %-30s |\n",gudang1[i][0],gudang1[i][1],gudang1[i][2],gudang1[i][3]);
+                            }
+                        }
+                        System.out.print("Ketik apapun untuk kembali ke menu: ");
+                        String kembali = sc.nextLine();
+                        sc.nextLine();
+                        if (kembali.equalsIgnoreCase("")) {
+                            break;
+                        }
+                        case 2:
+                        System.out.println("===============================================================================");
+                        System.out.println("|                            LIST BARANG GUDANG 2                             |");
+                        System.out.println("===============================================================================");
+                        System.out.printf("| %-12s | %-12s | %-12s | %-30s |\n","Nama","Kode","Kondisi","Deskripsi");
+                        System.out.println("===============================================================================");
+                        for (int i = 0; i < gudang2.length; i++) {
+                            if (gudang2[i][0] != null) {
+                                System.out.printf("| %-12s | %-12s | %-12s | %-30s |\n",gudang2[i][0],gudang2[i][1],gudang2[i][2],gudang2[i][3]);
+                            }
+                        }
+                        System.out.print("Ketik apapun untuk kembali ke menu: ");
+                        kembali = sc.nextLine();
+                        sc.nextLine();
+                        if (kembali.equalsIgnoreCase("")) {
+                            break;
+                        }
+                        case 3:
+                        System.out.println("===============================================================================");
+                        System.out.println("|                            LIST BARANG GUDANG 3                             |");
+                        System.out.println("===============================================================================");
+                        System.out.printf("| %-12s | %-12s | %-12s | %-30s |\n","Nama","Kode","Kondisi","Deskripsi");
+                        System.out.println("===============================================================================");
+                        for (int i = 0; i < gudang3.length; i++) {
+                            if (gudang3[i][0] != null) {
+                                System.out.printf("| %-12s | %-12s | %-12s | %-30s |\n",gudang3[i][0],gudang3[i][1],gudang3[i][2],gudang3[i][3]);
+                            }
+                        }
+                        System.out.print("Ketik apapun untuk kembali ke menu: ");
+                        kembali = sc.nextLine();
+                        sc.nextLine();
+                        if (kembali.equalsIgnoreCase("")) {
+                            break;
+                        }
+
+                    }break;
+                
+                    default:
+                    System.out.println("Pilihan tidak valid");
+                    break;
+>>>>>>> Stashed changes
                         case 2:
                         System.out.println("================================");
                         System.out.println("|           RIWAYAT            |");
@@ -563,7 +626,29 @@ public class InventarisTest {
                     
                     // sistem untuk keluar
                     case 7:
+<<<<<<< Updated upstream
                     System.exit(0);
+=======
+                    System.out.println("==============================================================================================");
+                    System.out.println("|                                SELAMAT DATANG DI MENU HELP                                 |");
+                    System.out.println("==============================================================================================");
+                    System.out.println("|                   Berikut Adalah Penjelasan Setiap Menu dari Sistem Kami                   |");
+                    System.out.println("==============================================================================================");
+                    System.out.println("| (1.) Anda dapat menambahkan barang ke gudang dengan input nama barang dan deskripsi barang |");
+                    System.out.println("| (2.) Anda dapat mengambil barang dari gudang dengan input kode unik barang                 |");
+                    System.out.println("| (3.) Anda dapat mengupdate atribut spesifik dari suatu barang dengan                       |");
+                    System.out.println("| (4.) Anda dapat melihat pencatatan riwayat sistem,mencari barang, dan melihat isi gudang   |");
+                    System.out.println("| (5.) Anda dapat kembali ke menu Log in untuk berganti user                                 |");
+                    System.out.println("| (6.) Anda dapat keluar dari sistem jika dirasa telah selesai menggunakan sistem kami       |");
+                    System.out.println("| (7.) Anda dapat melihat penjelasan dari setiap menu sistem kami                            |");
+                    System.out.println("==============================================================================================");
+                    System.out.println("|                Jika Masih Ada Masalah Silahkan Hubungi Kontak di Bawah ini!                |");
+                    System.out.println("==============================================================================================");
+                    System.out.println("|                               (Heru) WA: +62 811-300-529                                   |");
+                    System.out.println("|                               (Nova) WA: +62 895-2383-7769                                 |");
+                    System.out.println("|                              (Billy) WA: +62 857-8155-5905                                 |");
+                    System.out.println("==============================================================================================");
+>>>>>>> Stashed changes
                     break;
                 }
             }
