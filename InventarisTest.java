@@ -75,12 +75,12 @@ public class InventarisTest {
         System.out.println("|          MENU UTAMA          |");
         System.out.println("================================");
         System.out.println("|     1. Tambahkan barang      |");
-        System.out.println("|     2. Lihat Gudang          |");
-        System.out.println("|     3. Ambil barang          |");
-        System.out.println("|     4. Update barang         |");
-        System.out.println("|     5. Pelaporan             |");
-        System.out.println("|     6. Log Out               |");
-        System.out.println("|     7. Keluar                |");
+        System.out.println("|     2. Ambil Barang          |");
+        System.out.println("|     3. Update Barang         |");
+        System.out.println("|     4. Pelaporan             |");
+        System.out.println("|     5. Log Out               |");
+        System.out.println("|     6. Keluar                |");
+        System.out.println("|     7. Help                  |");
         System.out.println("================================");
         System.out.print("      Pilih menu: ");
         pilihan = sc.nextInt();
@@ -92,6 +92,7 @@ public class InventarisTest {
             System.out.println("================================");
             System.out.print("Masukkan nama barang: ");
             barang = sc.nextLine();
+            sc.nextLine();
             int angkaAcak;
             do {
                 angkaAcak = (int) (Math.random() * 100000) + 1;
@@ -157,37 +158,15 @@ public class InventarisTest {
                     System.out.println("Masukan tidak valid");
                     break; 
                 } break;
-            // sistem lihat gudang
-            case 2:
-            System.out.println("================================");
-            System.out.println("|        LIHAT GUDANG          |");
-            System.out.println("================================");
-            System.out.print("Gudang 1: ");
-            for (int i = 0; i < gudang1.length; i++) {
-                System.out.print(gudang1[i][0] + ", ");
-            }
-            System.out.print("\nGudang 2: ");
-            for (int i = 0; i < gudang2.length; i++) {
-                System.out.print(gudang2[i][0] + ", ");
-            }
-            System.out.print("\nGudang 3: ");
-            for (int i = 0; i < gudang3.length; i++) {
-                System.out.print(gudang3[i][0] + ", ");
-            }System.out.print("\n");
-            break;
-            
-            default:
-            System.out.println("Pilihan tidak valid");
-            break;
 
             // sistem ambil barang
-            case 3:
+            case 2:
             System.out.println("================================");
             System.out.println("|         AMBIL BARANG         |");
             System.out.println("================================");
             System.out.print("Pilih nomer gudang yang ingin dikosongkan (1,2,3): ");
             int BarangGudang = sc.nextInt();
-
+            sc.nextLine();
             System.out.println("Barang di Gudang " + BarangGudang + ":");
             switch (BarangGudang) {
                 case 1:
@@ -202,7 +181,7 @@ public class InventarisTest {
                 String hapusBarang1 = null;
                 System.out.println("Masukkan kode unik barang : ");
                 int kodeUnik = sc.nextInt();
-
+                sc.nextLine();
                 boolean barangDitemukan = false;
                 for (int i = 0; i < gudang1.length; i++) {
                     if (gudang1[i][0] != null && gudang1[i][1].equals(String.valueOf(kodeUnik))) {
@@ -243,7 +222,7 @@ public class InventarisTest {
                 sc.nextLine();
                 System.out.println("Masukkan kode unik barang : ");
                 kodeUnik = sc.nextInt();
-
+                sc.nextLine();
                 barangDitemukan = false;
                 for (int i = 0; i < gudang2.length; i++) {
                     if (gudang2[i][0] != null && gudang2[i][1].equals(String.valueOf(kodeUnik))) {
@@ -318,7 +297,7 @@ public class InventarisTest {
             }break;
                 
             // sistem Update Barang
-            case 4:
+            case 3:
             System.out.println("================================");
             System.out.println("|         UPDATE BARANG        |");
             System.out.println("================================");
@@ -329,15 +308,17 @@ public class InventarisTest {
                 case 1:
                 for (int i = 0; i < gudang1.length; i++) {
                     if (gudang1[i][0]!=null) {
-                    System.out.print(gudang1[i][0] + ", ");
+                    System.out.print(gudang1[i][0] + ": ");
+                    System.out.print(gudang1[i][1]);
+                    System.out.println();
                     }
                 }
                 System.out.println();
                 sc.nextLine();
-                System.out.print("Masukkan nama barang yang ingin di update: ");
+                System.out.print("Masukkan kode unik barang yang ingin di update: ");
                 String barangLama = sc.nextLine();
                 for (int i = 0; i < gudang1.length; i++) {
-                    if (gudang1[i][0]!= null && gudang1[i][0].equals(barangLama)) {
+                    if (gudang1[i][1]!= null && gudang1[i][1].equals(barangLama)) {
                         System.out.println("================================");
                         System.out.println("|     MENU UPDATE BARANG       |");
                         System.out.println("================================");
@@ -368,15 +349,17 @@ public class InventarisTest {
                 case 2:
                 for (int i = 0; i < gudang2.length; i++) {
                     if (gudang2[i][0]!=null) {
-                    System.out.print(gudang2[i][0] + ", ");
+                    System.out.print(gudang2[i][0] + ": ");
+                    System.out.print(gudang2[i][1]);
+                    System.out.println();
                     }
                 }
                 System.out.println();
                 sc.nextLine();
-                System.out.print("Masukkan nama barang yang ingin di update: ");
+                System.out.print("Masukkan kode unik barang yang ingin di update: ");
                 barangLama = sc.nextLine();
                 for (int i = 0; i < gudang2.length; i++) {
-                    if (gudang2[i][0]!= null && gudang2[i][0].equals(barangLama)) {
+                    if (gudang2[i][1]!= null && gudang2[i][1].equals(barangLama)) {
                         System.out.println("================================");
                         System.out.println("|     MENU UPDATE BARANG       |");
                         System.out.println("================================");
@@ -407,15 +390,16 @@ public class InventarisTest {
                 case 3:
                 for (int i = 0; i < gudang3.length; i++) {
                     if (gudang3[i][0]!=null) {
-                    System.out.print(gudang3[i][0] + ", ");
+                    System.out.print(gudang3[i][0] + ": ");
+                    System.out.print(gudang3[i][1]);
                     }
                 }
                 System.out.println();
                 sc.nextLine();
-                System.out.print("Masukkan nama barang yang ingin di update: ");
+                System.out.print("Masukkan kode unik barang yang ingin di update: ");
                 barangLama = sc.nextLine();
                 for (int i = 0; i < gudang3.length; i++) {
-                    if (gudang3[i][0]!= null && gudang3[i][0].equals(barangLama)) {
+                    if (gudang3[i][1]!= null && gudang3[i][1].equals(barangLama)) {
                         System.out.println("================================");
                         System.out.println("|     MENU UPDATE BARANG       |");
                         System.out.println("================================");
@@ -448,7 +432,7 @@ public class InventarisTest {
                 break;
                 }break;
 
-                case 5:
+                case 4:
                 //sistem pelaporan
                 System.out.println("================================");
                 System.out.println("|          PELAPORAN           |");
@@ -617,14 +601,18 @@ public class InventarisTest {
                     }
                     break;
 
-                    case 6:
+                    case 5:
+                    //Sistem kembali ke menu Log In
                     logIn = false;
                     sc.nextLine();
                     break;
                     
                     // sistem untuk keluar
-                    case 7:
+                    case 6:
                     System.exit(0);
+                    break;
+
+                    case 7:
                     break;
                 }
             }
