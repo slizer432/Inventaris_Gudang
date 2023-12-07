@@ -186,6 +186,7 @@ public class InventarisTest {
                 for (int i = 0; i < gudang1.length; i++) {
                     if (gudang1[i][0] != null && gudang1[i][1].equals(String.valueOf(kodeUnik))) {
                     barangDitemukan = true;
+                    hapusBarang1 = gudang1[i][0];
                     gudang1 [i][0] = hapusBarang1;
                     break;
                     }
@@ -205,7 +206,7 @@ public class InventarisTest {
                         gudang1[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus barang dengan kode unik " + kodeUnik + " dari Gudang 1" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dengan kode unik " + kodeUnik + " dari Gudang 1 oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
 
@@ -219,7 +220,6 @@ public class InventarisTest {
                     }
                 System.out.println();
                 String hapusBarang2 = null;
-                sc.nextLine();
                 System.out.println("Masukkan kode unik barang : ");
                 kodeUnik = sc.nextInt();
                 sc.nextLine();
@@ -227,6 +227,7 @@ public class InventarisTest {
                 for (int i = 0; i < gudang2.length; i++) {
                     if (gudang2[i][0] != null && gudang2[i][1].equals(String.valueOf(kodeUnik))) {
                     barangDitemukan = true;
+                    hapusBarang2 = gudang2[i][0];
                     gudang2 [i][0] = hapusBarang2;
                     break;
                     }
@@ -246,7 +247,7 @@ public class InventarisTest {
                         gudang2[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus barang dengan kode unik " + kodeUnik + " dari Gudang 2" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dengan kode unik " + kodeUnik + " dari Gudang 2 oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
                 case 3:
@@ -259,7 +260,6 @@ public class InventarisTest {
                     }
                 System.out.println();
                 
-                sc.nextLine();
                 String hapusBarang3 = null;
                 System.out.println("Masukkan kode unik barang : ");
                 kodeUnik = sc.nextInt();
@@ -268,6 +268,7 @@ public class InventarisTest {
                 for (int i = 0; i < gudang3.length; i++) {
                     if (gudang3[i][0] != null && gudang3[i][1].equals(String.valueOf(kodeUnik))) {
                     barangDitemukan = true;
+                    hapusBarang3 = gudang3[i][0];
                     gudang3 [i][0] = hapusBarang3;
                     break;
                     }
@@ -287,7 +288,7 @@ public class InventarisTest {
                         gudang3[i][3] = null;
                     }
                 }
-                riwayat[indeksRiwayat] = "Menghapus barang dengan kode unik " + kodeUnik + " dari Gudang 3" + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dengan kode unik " + kodeUnik + " dari Gudang 3 oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 } break;
 
