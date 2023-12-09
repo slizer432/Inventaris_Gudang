@@ -2,53 +2,59 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.LocalTime;
 public class InventarisTest {
+    
+    static LocalDate tanggal = LocalDate.now();
+    static LocalTime waktu = LocalTime.now();
+    static Scanner sc = new Scanner(System.in);
+    static String gudang1[][] = new String[15][4];
+    static String gudang2[][] = new String[15][4];
+    static String gudang3[][] = new String[15][4];
+    static String[] riwayat = new String[20];
+    static String username = "Nama user";
+    static int indeksRiwayat = 0;
+    static String barang;
+    static int jumlah;
+    static int angkaAcak;
 
     public static void main(String[] args) {
-    LocalDate tanggal = LocalDate.now();
-    LocalTime waktu = LocalTime.now();
-    Scanner sc = new Scanner(System.in);
     boolean logIn = false;
     int pilihan;
-    String gudang1[][] = new String[15][4];
-    String gudang2[][] = new String[15][4];
-    String gudang3[][] = new String[15][4];
-    gudang1[0][0] = "Laptop";
+    gudang1[0][0] = "Laptop Lenovo";
     gudang1[0][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang1[0][2] = "Baik";
-    gudang1[1][0] = "Laptop";
+    gudang1[0][3] = "6";
+    gudang1[1][0] = "Laptop Asus";
     gudang1[1][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang1[1][2] = "Baik";
-    gudang1[2][0] = "Keyboard";
+    gudang1[1][3] = "7";
+    gudang1[2][0] = "Keyboard Rexus";
     gudang1[2][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang1[2][2] = "Rusak";
-    gudang1[3][0] = "Mouse";
-    gudang1[3][1] = String.valueOf((int) (Math.random() * 100000) + 1);
-    gudang1[3][2] = "Baik";
-    gudang2[0][2] = "Monitor";
-    gudang2[0][2] = String.valueOf((int) (Math.random() * 100000) + 1);
+    gudang1[2][3] = "9";
+    gudang2[0][0] = "Headset Logitech";
+    gudang2[0][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang2[0][2] = "Baik";
-    gudang2[1][0] = "Headset";
+    gudang2[0][3] = "5";
+    gudang2[1][0] = "Headset Rexus";
     gudang2[1][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang2[1][2] = "Baik";
-    gudang2[2][0] = "Camera";
+    gudang2[1][3] = "6";
+    gudang2[2][0] = "Camera Canon";
     gudang2[2][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang2[2][2] = "Baik";
-    gudang2[3][0] = "Headset";
-    gudang2[3][1] = String.valueOf((int) (Math.random() * 100000) + 1);
-    gudang2[3][2] = "Baik";
-    gudang3[0][0] = "Headset";
+    gudang2[2][3] = "10";
+    gudang3[0][0] = "Headset Xiaomi";
     gudang3[0][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang3[0][2] = "Baik";
-    gudang3[1][0] = "Mic";
+    gudang3[0][3] = "9";
+    gudang3[1][0] = "Mic Hardwell";
     gudang3[1][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang3[1][2] = "Baik";
-    gudang3[2][0] = "Monitor";
+    gudang3[1][3] = "7";
+    gudang3[2][0] = "Monitor Asus";
     gudang3[2][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang3[2][2] = "Baik";
-    String barang;
-    String[] riwayat = new String[20];
-    String username = "Nama user";
-    int indeksRiwayat = 0;
+    gudang3[2][3] = "10";
 
     while (true) {
         
@@ -91,9 +97,8 @@ public class InventarisTest {
             System.out.println("|       TAMBAHKAN BARANG       |");
             System.out.println("================================");
             System.out.print("Masukkan nama barang: ");
-            barang = sc.nextLine();
             sc.nextLine();
-            int angkaAcak;
+            barang = sc.nextLine();
             do {
                 angkaAcak = (int) (Math.random() * 100000) + 1;
 
@@ -108,55 +113,30 @@ public class InventarisTest {
                     break;
                 }
             } while (true);
-            System.out.println("Kode unik barang: "+angkaAcak);
             System.out.print("Pilih nomer gudang (1,2,3): ");
             int pilihanGudang = sc.nextInt();
-            System.out.print("Masukkan deskripsi barang: ");
+            System.out.print("Masukkan jumlah barang: ");
             sc.nextLine();
-            String descBarang = sc.nextLine();
-            System.out.print("Barang berhasil ditambahkan!");
-            System.out.println();
-            riwayat[indeksRiwayat] = "Menambahkan " + barang + " ke Gudang " + pilihanGudang + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+            jumlah = sc.nextInt();
+            riwayat[indeksRiwayat] = "Menambahkan " + barang +" sebanyak " + jumlah + " ke Gudang " + pilihanGudang + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
             indeksRiwayat++;
             switch (pilihanGudang) {
                 case 1:
-                    for (int i = 0; i < gudang1.length; i++) {
-                        if (gudang1[i][0] != null) {
-                            continue;
-                        }
-                        gudang1[i][0] = barang;
-                        gudang1[i][1] = String.valueOf(angkaAcak);
-                        gudang1[i][2] = "Baik";
-                        gudang1[i][3] = descBarang;
-                        break;
-                    }
-                    break;
-                    case 2:
-                    for (int i = 0; i < gudang2.length; i++) {
-                        if (gudang2[i][0] != null) {
-                            continue;
-                        }
-                        gudang2[i][0] = barang;
-                        gudang2[i][1] = String.valueOf(angkaAcak);
-                        gudang2[i][2] = "baik";
-                        gudang2[i][3] = descBarang;
-                        break;
-                    }
-                    break;
-                    case 3:
-                    for (int i = 0; i < gudang3.length; i++) {
-                        if (gudang3[i][0] != null) {
-                            continue;
-                        }
-                        gudang3[i][0] = barang;
-                        gudang3[i][1] = String.valueOf(angkaAcak);
-                        gudang3[i][2] = "baik";
-                        gudang3[i][3] = descBarang;
-                        break;
-                    }
-                    default:
-                    System.out.println("Masukan tidak valid");
-                    break; 
+                tambahBarang(gudang1);
+                break;
+                
+                case 2:
+                tambahBarang(gudang2);
+                break;
+                
+                case 3:
+                tambahBarang(gudang3);
+                break;
+                
+                default:
+                System.out.println("Masukan tidak valid");
+                break;
+                
                 } break;
 
             // sistem ambil barang
@@ -177,27 +157,27 @@ public class InventarisTest {
                             System.out.println();
                         }
                     }
-                System.out.println();
-                String hapusBarang1 = null;
-                System.out.println("Masukkan kode unik barang : ");
-                int kodeUnik = sc.nextInt();
-                sc.nextLine();
+                    System.out.println();
+                    String hapusBarang1 = null;
+                    System.out.println("Masukkan kode unik barang : ");
+                    int kodeUnik = sc.nextInt();
+                    sc.nextLine();
                 boolean barangDitemukan = false;
                 for (int i = 0; i < gudang1.length; i++) {
                     if (gudang1[i][0] != null && gudang1[i][1].equals(String.valueOf(kodeUnik))) {
-                    barangDitemukan = true;
-                    hapusBarang1 = gudang1[i][0];
-                    gudang1 [i][0] = hapusBarang1;
-                    break;
+                        barangDitemukan = true;
+                        hapusBarang1 = gudang1[i][0];
+                        gudang1 [i][0] = hapusBarang1;
+                        break;
                     }
                 }
-
+                
                 if (!barangDitemukan) {
                 System.out.println("Barang dengan nama atau kode unik yang dimasukkan tidak ditemukan di Gudang 1.");
-                } else {
+            } else {
                 System.out.print("Barang berhasil terhapus!");
                 System.out.println();
-
+                
                 for (int i = 0; i < gudang1.length; i++) {
                     if (gudang1[i][0] != null && gudang1[i][1].equals(String.valueOf(kodeUnik))) {
                         gudang1[i][0] = null;
@@ -208,16 +188,16 @@ public class InventarisTest {
                 }
                 riwayat[indeksRiwayat] = "Menghapus " + hapusBarang1 + " dengan kode unik " + kodeUnik + " dari Gudang 1 oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
-                } break;
-
+            } break;
+            
                 case 2:
                 for (int i = 0; i < gudang2.length; i++) {
-                        if (gudang2[i][0]!=null) {
-                            System.out.print(gudang2[i][0] + ": ");
-                            System.out.print(gudang2[i][1]);
-                            System.out.println();
-                        }
+                    if (gudang2[i][0]!=null) {
+                        System.out.print(gudang2[i][0] + ": ");
+                        System.out.print(gudang2[i][1]);
+                        System.out.println();
                     }
+                }
                 System.out.println();
                 String hapusBarang2 = null;
                 System.out.println("Masukkan kode unik barang : ");
@@ -226,37 +206,37 @@ public class InventarisTest {
                 barangDitemukan = false;
                 for (int i = 0; i < gudang2.length; i++) {
                     if (gudang2[i][0] != null && gudang2[i][1].equals(String.valueOf(kodeUnik))) {
-                    barangDitemukan = true;
-                    hapusBarang2 = gudang2[i][0];
-                    gudang2 [i][0] = hapusBarang2;
-                    break;
+                        barangDitemukan = true;
+                        hapusBarang2 = gudang2[i][0];
+                        gudang2 [i][0] = hapusBarang2;
+                        break;
                     }
                 }
-
+                
                 if (!barangDitemukan) {
-                System.out.println("Barang dengan nama atau kode unik yang dimasukkan tidak ditemukan di Gudang 2.");
+                    System.out.println("Barang dengan nama atau kode unik yang dimasukkan tidak ditemukan di Gudang 2.");
                 } else {
-                System.out.print("Barang berhasil terhapus!");
-                System.out.println();
-
-                for (int i = 0; i < gudang2.length; i++) {
-                    if (gudang2[i][0] != null && gudang2[i][1].equals(String.valueOf(kodeUnik))) {
-                        gudang2[i][0] = null;
-                        gudang2[i][1] = null;
-                        gudang2[i][2] = null;
-                        gudang2[i][3] = null;
+                    System.out.print("Barang berhasil terhapus!");
+                    System.out.println();
+                    
+                    for (int i = 0; i < gudang2.length; i++) {
+                        if (gudang2[i][0] != null && gudang2[i][1].equals(String.valueOf(kodeUnik))) {
+                            gudang2[i][0] = null;
+                            gudang2[i][1] = null;
+                            gudang2[i][2] = null;
+                            gudang2[i][3] = null;
+                        }
                     }
-                }
-                riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dengan kode unik " + kodeUnik + " dari Gudang 2 oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
-                indeksRiwayat++;
+                    riwayat[indeksRiwayat] = "Menghapus " + hapusBarang2 + " dengan kode unik " + kodeUnik + " dari Gudang 2 oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                    indeksRiwayat++;
                 } break;
                 case 3:
                 for (int i = 0; i < gudang2.length; i++) {
-                        if (gudang3[i][0]!=null) {
-                            System.out.print(gudang3[i][0] + ": ");
-                            System.out.print(gudang3[i][1]);
-                            System.out.println();
-                        }
+                    if (gudang3[i][0]!=null) {
+                        System.out.print(gudang3[i][0] + ": ");
+                        System.out.print(gudang3[i][1]);
+                        System.out.println();
+                    }
                     }
                 System.out.println();
                 
@@ -271,15 +251,15 @@ public class InventarisTest {
                     hapusBarang3 = gudang3[i][0];
                     gudang3 [i][0] = hapusBarang3;
                     break;
-                    }
                 }
-
-                if (!barangDitemukan) {
+            }
+            
+            if (!barangDitemukan) {
                 System.out.println("Barang dengan nama atau kode unik yang dimasukkan tidak ditemukan di Gudang 3.");
-                } else {
+            } else {
                 System.out.print("Barang berhasil terhapus!");
                 System.out.println();
-
+                
                 for (int i = 0; i < gudang3.length; i++) {
                     if (gudang3[i][0] != null && gudang3[i][1].equals(String.valueOf(kodeUnik))) {
                         gudang3[i][0] = null;
@@ -290,32 +270,32 @@ public class InventarisTest {
                 }
                 riwayat[indeksRiwayat] = "Menghapus " + hapusBarang3 + " dengan kode unik " + kodeUnik + " dari Gudang 3 oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
-                } break;
-
-                default:
-                System.out.println("Barang Tidak Ditemukan");
-                break;
-            }break;
-                
-            // sistem Update Barang
-            case 3:
-            System.out.println("================================");
-            System.out.println("|         UPDATE BARANG        |");
-            System.out.println("================================");
-            System.out.print("Pilih gudang (1,2,3): ");
-            int pilGudang = sc.nextInt();
-            System.out.println("Barang di Gudang " + pilGudang + ":");
-            switch (pilGudang) {
-                case 1:
-                for (int i = 0; i < gudang1.length; i++) {
-                    if (gudang1[i][0]!=null) {
+            } break;
+            
+            default:
+            System.out.println("Barang Tidak Ditemukan");
+            break;
+        }break;
+        
+        // sistem Update Barang
+        case 3:
+        System.out.println("================================");
+        System.out.println("|         UPDATE BARANG        |");
+        System.out.println("================================");
+        System.out.print("Pilih gudang (1,2,3): ");
+        int pilGudang = sc.nextInt();
+        System.out.println("Barang di Gudang " + pilGudang + ":");
+        switch (pilGudang) {
+            case 1:
+            for (int i = 0; i < gudang1.length; i++) {
+                if (gudang1[i][0]!=null) {
                     System.out.print(gudang1[i][0] + ": ");
                     System.out.print(gudang1[i][1]);
                     System.out.println();
-                    }
                 }
-                System.out.println();
-                sc.nextLine();
+            }
+            System.out.println();
+            sc.nextLine();
                 System.out.print("Masukkan kode unik barang yang ingin di update: ");
                 String barangLama = sc.nextLine();
                 for (int i = 0; i < gudang1.length; i++) {
@@ -346,13 +326,13 @@ public class InventarisTest {
                         break;
                     }
                 }break;
-
+                
                 case 2:
                 for (int i = 0; i < gudang2.length; i++) {
                     if (gudang2[i][0]!=null) {
-                    System.out.print(gudang2[i][0] + ": ");
-                    System.out.print(gudang2[i][1]);
-                    System.out.println();
+                        System.out.print(gudang2[i][0] + ": ");
+                        System.out.print(gudang2[i][1]);
+                        System.out.println();
                     }
                 }
                 System.out.println();
@@ -387,12 +367,12 @@ public class InventarisTest {
                         break;
                     }
                 }break;
-
+                
                 case 3:
                 for (int i = 0; i < gudang3.length; i++) {
                     if (gudang3[i][0]!=null) {
-                    System.out.print(gudang3[i][0] + ": ");
-                    System.out.print(gudang3[i][1]);
+                        System.out.print(gudang3[i][0] + ": ");
+                        System.out.print(gudang3[i][1]);
                     }
                 }
                 System.out.println();
@@ -427,19 +407,19 @@ public class InventarisTest {
                         break;
                     }
                 }break;
-        
+                
                 default:
                 System.out.println("Barang Tidak Ditemukan");
                 break;
-                }break;
-
-                case 4:
-                //sistem pelaporan
-                System.out.println("================================");
-                System.out.println("|          PELAPORAN           |");
-                System.out.println("================================");
-                System.out.println("|    1. Lihat Gudang           |");
-                System.out.println("|    2. Riwayat                |");
+            }break;
+            
+            case 4:
+            //sistem pelaporan
+            System.out.println("================================");
+            System.out.println("|          PELAPORAN           |");
+            System.out.println("================================");
+            System.out.println("|    1. Lihat Gudang           |");
+            System.out.println("|    2. Riwayat                |");
                 System.out.println("|    3. Cari barang            |");
                 System.out.println("================================");
                 System.out.print("Pilih Menu: ");
@@ -504,22 +484,22 @@ public class InventarisTest {
                         if (kembali.equalsIgnoreCase("")) {
                             break;
                         }
-
+                        
                     }break;
-                
+                    
                     default:
                     System.out.println("Pilihan tidak valid");
                     break;
-                        case 2:
-                        System.out.println("================================");
-                        System.out.println("|           RIWAYAT            |");
-                        System.out.println("================================");
-                        for (int i = 0; i < indeksRiwayat; i++) {
-                            System.out.println(riwayat[i]);
-                        } 
+                    case 2:
+                    System.out.println("================================");
+                    System.out.println("|           RIWAYAT            |");
+                    System.out.println("================================");
+                    for (int i = 0; i < indeksRiwayat; i++) {
+                        System.out.println(riwayat[i]);
+                    } 
                         break;
-                    
-
+                        
+                        
                         case 3:
                         
                         // sistem untuk memilih metode pencarian. bisa berupa nama barang atau kode unik
@@ -532,12 +512,12 @@ public class InventarisTest {
                         System.out.println("================================");
                         System.out.print("Pilih metode: ");
                         int metode = sc.nextInt();
-
+                        
                         switch (metode) {
                             
                             // sistem pencarian barang menggunakan nama barang
                             case 1:
-
+                            
                             // pencarian di gudang 1
                             System.out.print("Masukkan keyword (nama barang): ");
                             sc.nextLine();
@@ -593,15 +573,15 @@ public class InventarisTest {
                                 }
                             }
                             break;
-
+                            
                             default:
                             System.out.println("Pilihan tidak valid");
-                                break;
+                            break;
                         }
-
+                        
                     }
                     break;
-
+                    
                     case 5:
                     //Sistem kembali ke menu Log In
                     logIn = false;
@@ -612,11 +592,34 @@ public class InventarisTest {
                     case 6:
                     System.exit(0);
                     break;
-
+                    
                     case 7:
                     break;
                 }
             }
         }  
+    }
+    
+    public static void tambahBarang(String[][] gudang) {
+        for (int i = 0; i < gudang.length; i++) {
+            if (gudang[i][0] != null && gudang[i][0].equalsIgnoreCase(barang)) {
+                int jumlahBarang = Integer.parseInt(gudang[i][3]);
+                jumlahBarang += jumlah;
+                gudang[i][3] = String.valueOf(jumlahBarang);
+                break;
+            }
+            
+            else if (gudang[i][0] == null) {
+                System.out.println("Kode unik barang: "+angkaAcak);
+                gudang[i][0] = barang;
+                gudang[i][1] = String.valueOf(angkaAcak);
+                gudang[i][2] = "Baik";
+                gudang[i][3] = String.valueOf(jumlah);
+                break;
+            }
+        }
+        System.out.println("Barang berhasil ditambahkan!");
+        System.out.print("Silahkan input apapun untuk meneruskan");
+        sc.next();
     }
 }
