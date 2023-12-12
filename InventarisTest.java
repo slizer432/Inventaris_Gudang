@@ -446,14 +446,14 @@ public class InventarisTest {
     }
 
     public static void displayGudang (int nomer, String[][] gudang) {
-                        System.out.println("=========================================================================");
-                        System.out.println("|                       LIST BARANG GUDANG "+nomer+"                            |");
-                        System.out.println("=========================================================================");
-                        System.out.printf("| %-15s | %-15s | %-15s | %-15s |\n","Nama","Kode","Kondisi","Jumlah");
-                        System.out.println("=========================================================================");
+                        System.out.println("=============================================================================================");
+                        System.out.println("|                                    LIST BARANG GUDANG "+nomer+"                                   |");
+                        System.out.println("============================================================================================="); 
+                        System.out.printf("| %-20s | %-20s | %-20s | %-20s |\n","Nama","Kode","Kondisi","Jumlah");
+                        System.out.println("=============================================================================================");
                         for (int i = 0; i < gudang.length; i++) {
                             if (gudang[i][0] != null) {
-                                System.out.printf("| %-15s | %-15s | %-15s | %-15s |\n",gudang[i][0],gudang[i][1],gudang[i][2],gudang[i][3]);
+                                System.out.printf("| %-20s | %-20s | %-20s | %-20s |\n",gudang[i][0],gudang[i][1],gudang[i][2],gudang[i][3]);
                             }
                         }
                         System.out.print("Klik enter untuk melanjutkan");
