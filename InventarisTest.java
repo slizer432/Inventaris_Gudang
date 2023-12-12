@@ -110,45 +110,44 @@ public class InventarisTest {
                         break;
                     }
                 } while (true);
-                System.out.println("Kode unik barang " + angkaAcak);
                 System.out.print("Pilih nomor gudang (1,2,3): ");
                 int pilihanGudang = sc.nextInt();
                 System.out.print("Masukkan jumlah barang: ");
                 sc.nextLine();
                 jumlah = sc.nextInt();
-                System.out.println("-------------------------------------");
-                System.out.println("|    1. Kembali Menambahkan Barang  | ");
-                System.out.println("|    2. Kembali ke Menu Utama       |");
-                System.out.println("-------------------------------------");
-                System.out.print("Silahkan pilih opsi 1 atau 2 : ");
-                int tambahLagi = sc.nextInt();
-        
+                
                 riwayat[indeksRiwayat] = "- Menambahkan " + barang + " sebanyak " + jumlah + " ke Gudang " + pilihanGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
-        
+                
                 switch (pilihanGudang) {
                     case 1:
-                        tambahBarang(gudang1);
-                        break;
+                    tambahBarang(gudang1);
+                    break;
         
                     case 2:
                         tambahBarang(gudang2);
                         break;
-        
+                        
                     case 3:
                         tambahBarang(gudang3);
                         break;
-        
-                    default:
+                        
+                        default:
                         System.out.println("Masukan tidak valid");
                         break;
+                    }
+                    
+                    System.out.println("-------------------------------------");
+                    System.out.println("|    1. Kembali Menambahkan Barang  | ");
+                    System.out.println("|    2. Kembali ke Menu Utama       |");
+                    System.out.println("-------------------------------------");
+                    System.out.print("Silahkan pilih opsi 1 atau 2 : ");
+                    int tambahLagi = sc.nextInt();
+                    if (tambahLagi != 1) {
+                        break;
+                    }
                 }
-        
-                if (tambahLagi != 1) {
-                    break;
-                }
-            }
-            break;
+                break;
 
             // sistem ambil barang
             case 2:
@@ -401,6 +400,7 @@ public class InventarisTest {
                     gudang[i][3] = String.valueOf(jumlahBarang);
                     break;
                 } else if (gudang[i][0] == null) {
+                    System.out.println("Kode unik barang " + angkaAcak);
                     gudang[i][0] = barang;
                     gudang[i][1] = String.valueOf(angkaAcak);
                     gudang[i][2] = "Baik";
