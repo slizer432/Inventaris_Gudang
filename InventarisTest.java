@@ -193,158 +193,33 @@ public class InventarisTest {
             }
         } break;
         
-        // sistem Update Barang
-        case 3:
-        while (true) {
-        System.out.println("===================================================================================================");
-        System.out.println("|                                       UPDATE BARANG                                             |");
-        System.out.println("===================================================================================================");
-        System.out.print("Pilih gudang (1,2,3): ");
-        int pilGudang = sc.nextInt();
-        System.out.println("Barang di Gudang " + pilGudang + ":");
-        switch (pilGudang) {
-            case 1:
-            for (int i = 0; i < gudang1.length; i++) {
-                if (gudang1[i][0]!=null) {
-                    System.out.print(gudang1[i][0] + ": ");
-                    System.out.print(gudang1[i][1]);
-                    System.out.println();
-                }
-            }
-            System.out.println();
-            sc.nextLine();
-                System.out.print("Masukkan kode unik barang yang ingin di update: ");
-                String barangLama = sc.nextLine();
-                for (int i = 0; i < gudang1.length; i++) {
-                    if (gudang1[i][1]!= null && gudang1[i][1].equals(barangLama)) {
-                        System.out.println("===================================================================================================");
-                        System.out.println("|                                    MENU UPDATE BARANG                                           |");
-                        System.out.println("===================================================================================================");
-                        System.out.println("|                                    1. Nama Barang                                               |");
-                        System.out.println("|                                    2. Kondisi Barang                                            |");
-                        System.out.println("|                                    3. Deskripsi Barang                                          |");
-                        System.out.println("===================================================================================================");
-                        System.out.print("Masukkan nomor menu untuk update barang (1,2,3): ");
-                        String menuUpdate = sc.nextLine();
-                        if (menuUpdate.equals("1")) {
-                            System.out.print("Masukkan nama barang yang baru: ");
-                            gudang1[i][0] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Nama Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else if (menuUpdate.equals("2")) {
-                            System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
-                            gudang1[i][2] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Kondisi Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else if (menuUpdate.equals("3")) {
-                            System.out.print("Masukkan deskripsi barang yang baru: ");
-                            gudang1[i][3] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Deskripsi Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else
-                        System.out.println("Input tidak valid");
-                        break;
-                    }
-                }break;
-                
+            // sistem Update Barang
+            case 3:
+            while (true) {
+            System.out.println("===================================================================================================");
+            System.out.println("|                                       UPDATE BARANG                                             |");
+            System.out.println("===================================================================================================");
+            System.out.print("Pilih gudang (1,2,3): ");
+            int pilGudang = sc.nextInt();
+            System.out.println("Barang di Gudang " + pilGudang + ":");
+            switch (pilGudang) {
+                case 1:
+                displayGudang(pilGudang, gudang1);
+                updateGudang(1, gudang1);
+                break;
+
                 case 2:
-                for (int i = 0; i < gudang2.length; i++) {
-                    if (gudang2[i][0]!=null) {
-                        System.out.print(gudang2[i][0] + ": ");
-                        System.out.print(gudang2[i][1]);
-                        System.out.println();
-                    }
-                }
-                System.out.println();
-                sc.nextLine();
-                System.out.print("Masukkan kode unik barang yang ingin di update: ");
-                barangLama = sc.nextLine();
-                for (int i = 0; i < gudang2.length; i++) {
-                    if (gudang2[i][1]!= null && gudang2[i][1].equals(barangLama)) {
-                        System.out.println("===================================================================================================");
-                        System.out.println("|                                    MENU UPDATE BARANG                                           |");
-                        System.out.println("===================================================================================================");
-                        System.out.println("|                                    1. Nama Barang                                               |");
-                        System.out.println("|                                    2. Kondisi Barang                                            |");
-                        System.out.println("|                                    3. Deskripsi Barang                                          |");
-                        System.out.println("===================================================================================================");
-                        System.out.print("Masukkan nomor menu untuk update barang (1,2,3): ");
-                        String menuUpdate = sc.nextLine();
-                        if (menuUpdate.equals("1")) {
-                            System.out.print("Masukkan nama barang yang baru: ");
-                            gudang2[i][0] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Nama Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else if (menuUpdate.equals("2")) {
-                            System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
-                            gudang2[i][2] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Kondisi Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else if (menuUpdate.equals("3")) {
-                            System.out.print("Masukkan deskripsi barang yang baru: ");
-                            gudang2[i][3] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Deskripsi Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else
-                        System.out.println("Input tidak valid");
-                        break;
-                    }
-                }break;
-                
+                displayGudang(pilGudang, gudang2);
+                updateGudang(2, gudang2);
+                break;
+
                 case 3:
-                for (int i = 0; i < gudang3.length; i++) {
-                    if (gudang3[i][0]!=null) {
-                        System.out.print(gudang3[i][0] + ": ");
-                        System.out.print(gudang3[i][1]);
-                    }
-                }
-                System.out.println();
-                sc.nextLine();
-                System.out.print("Masukkan kode unik barang yang ingin di update: ");
-                barangLama = sc.nextLine();
-                for (int i = 0; i < gudang3.length; i++) {
-                    if (gudang3[i][1]!= null && gudang3[i][1].equals(barangLama)) {
-                        System.out.println("===================================================================================================");
-                        System.out.println("|                                    MENU UPDATE BARANG                                           |");
-                        System.out.println("===================================================================================================");
-                        System.out.println("|                                    1. Nama Barang                                               |");
-                        System.out.println("|                                    2. Kondisi Barang                                            |");
-                        System.out.println("|                                    3. Deskripsi Barang                                          |");
-                        System.out.println("===================================================================================================");
-                        System.out.print("Masukkan nomor menu untuk update barang (1,2,3): ");
-                        String menuUpdate = sc.nextLine();
-                        if (menuUpdate.equals("1")) {
-                            System.out.print("Masukkan nama barang yang baru: ");
-                            gudang3[i][0] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Nama Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else if (menuUpdate.equals("2")) {
-                            System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
-                            gudang3[i][2] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Kondisi Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else if (menuUpdate.equals("3")) {
-                            System.out.print("Masukkan deskripsi barang yang baru: ");
-                            gudang3[i][3] = sc.nextLine();
-                            System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Deskripsi Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
-                            indeksRiwayat++;
-                        }else
-                        System.out.println("Input tidak valid");
-                        break;
-                    }
-                }break;
+                displayGudang(pilGudang, gudang3);
+                updateGudang(3, gudang3);
+                break;
                 
                 default:
-                System.out.println("Barang Tidak Ditemukan");
+                System.out.println("Input tidak valid");
                 break;
                 }
                 System.out.println("-------------------------------------");
@@ -578,5 +453,46 @@ public class InventarisTest {
                         System.out.print("Klik enter untuk melanjutkan");
                         sc.nextLine();
                         sc.nextLine();
+    }
+
+    public static void updateGudang (int angka, String[][] gudang) {
+                System.out.println();
+                sc.nextLine();
+                System.out.print("Masukkan kode unik barang yang ingin di update: ");
+                String barangLama = sc.nextLine();
+                for (int i = 0; i < gudang.length; i++) {
+                    if (gudang[i][1]!= null && gudang[i][1].equals(barangLama)) {
+                        System.out.println("===================================================================================================");
+                        System.out.println("|                                    MENU UPDATE BARANG                                           |");
+                        System.out.println("===================================================================================================");
+                        System.out.println("|                                    1. Nama Barang                                               |");
+                        System.out.println("|                                    2. Kondisi Barang                                            |");
+                        System.out.println("|                                    3. Jumlah Barang                                             |");
+                        System.out.println("===================================================================================================");
+                        System.out.print("Masukkan nomor menu untuk update barang (1,2,3): ");
+                        String menuUpdate = sc.nextLine();
+                        if (menuUpdate.equals("1")) {
+                            System.out.print("Masukkan nama kategori barang yang baru: ");
+                            gudang[i][0] = sc.nextLine();
+                            System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "- Mengupdate Nama Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang "+ angka +" oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                            indeksRiwayat++;
+                        }else if (menuUpdate.equals("2")) {
+                            System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
+                            gudang[i][2] = sc.nextLine();
+                            System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "- Mengupdate Kondisi Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang "+ angka +" oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                            indeksRiwayat++;
+                        }else if (menuUpdate.equals("3")) {
+                            System.out.print("Masukkan jumlah barang yang baru: ");
+                            gudang[i][3] = sc.nextLine();
+                            System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "- Mengupdate Jumlah Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang " + angka + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                            indeksRiwayat++;
+                        }else
+                        System.out.println("Input tidak valid");
+                        break;
+                    }
+                }
     }
 }
