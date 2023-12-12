@@ -257,14 +257,17 @@ public class InventarisTest {
                     switch (pilhGud) {
                         case 1:
                         displayGudang(1, gudang1);
+                        sc.nextLine();
                         break;
-
+                        
                         case 2:
                         displayGudang(2, gudang2);
+                        sc.nextLine();
                         break;
-
+                        
                         case 3:
                         displayGudang(3, gudang3);
+                        sc.nextLine();
                         break;
                         
                     }break;
@@ -363,6 +366,8 @@ public class InventarisTest {
                             System.out.println("Pilihan tidak valid");
                             break;
                         }
+                        break;
+
                         case 4:
                         loop = false;
                         continue;
@@ -457,7 +462,6 @@ public class InventarisTest {
                             }
                         }
                         System.out.print("Klik enter untuk melanjutkan");
-                        sc.nextLine();
                         sc.nextLine();
     }
 
