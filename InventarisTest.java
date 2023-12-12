@@ -393,10 +393,43 @@ public class InventarisTest {
                     
                     // sistem untuk keluar
                     case 6:
+                    System.out.println("================================================================================================");
+                    System.out.println("|                         TERIMA KASIH TELAH MENGGUNAKAN PROGRAM KAMI!                         |");
+                    System.out.println("================================================================================================");
+                    System.out.println("|                       Jangan Lupa Follow Media Sosial Kami Di Bawah Ini!                     |");
+                    System.out.println("|                                                                                              |");
+                    System.out.println("|                                                                                              |");
+                    System.out.println("|                                                                                              |");
+                    System.out.println("|                                    (Billy)  IG:exzbee                                        |");
+                    System.out.println("================================================================================================");
+                    System.out.println("================================================================================================");
                     System.exit(0);
                     break;
                     
                     case 7:
+                    System.out.println("================================================================================================");
+                    System.out.println("|                                 SELAMAT DATANG DI MENU HELP                                  |");
+                    System.out.println("================================================================================================");
+                    System.out.println("|                    Berikut Adalah Penjelasan Setiap Menu dari Sistem Kami                    |");
+                    System.out.println("================================================================================================");
+                    System.out.println("| (1.) Anda dapat menambahkan barang ke gudang dengan input kategori barang dan jumlah barang  |");
+                    System.out.println("| (2.) Anda dapat mengambil bebrapa jumlah barang di gudang dengan input kode unik barang      |");
+                    System.out.println("| (3.) Anda dapat mengupdate atribut spesifik dari suatu barang(kategori/kondisi/jumlah)       |");
+                    System.out.println("| (4.) Anda dapat melihat isi gudang, pencatatan riwayat sistem, dan mencari barang            |");
+                    System.out.println("| (5.) Anda dapat kembali ke menu Log in untuk berganti user                                   |");
+                    System.out.println("| (6.) Anda dapat keluar dari sistem jika dirasa telah selesai menggunakan sistem kami         |");
+                    System.out.println("| (7.) Anda dapat melihat penjelasan dari setiap menu sistem kami                              |");
+                    System.out.println("================================================================================================");
+                    System.out.println("|                Jika Masih Ada Masalah Silahkan Hubungi Kontak di Bawah ini!                  |");
+                    System.out.println("================================================================================================");
+                    System.out.println("|                                (Heru) WA: +62 811-300-529                                    |");
+                    System.out.println("|                                (Nova) WA: +62 895-2383-7769                                  |");
+                    System.out.println("|                               (Billy) WA: +62 857-8155-5905                                  |");
+                    System.out.println("================================================================================================");
+                    System.out.println();
+                    System.out.print("Klik enter untuk kembali ke menu:");
+                    sc.nextLine();
+                    sc.nextLine();
                     break;
                 }
             }
