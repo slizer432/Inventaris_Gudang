@@ -234,13 +234,15 @@ public class InventarisTest {
             
             case 4:
             //sistem pelaporan
-            while (true) {
+            boolean loop = true;
+            while (loop == true) {
             System.out.println("===================================================================================================");
             System.out.println("|                                          PELAPORAN                                              |");
             System.out.println("===================================================================================================");
             System.out.println("|                                       1. Lihat Gudang                                           |");
             System.out.println("|                                       2. Riwayat                                                |");
             System.out.println("|                                       3. Cari barang                                            |");
+            System.out.println("|                                       4. Kembali ke menu utama                                  |");
             System.out.println("===================================================================================================");
             System.out.print("Pilih Menu: ");
                 int pilihan2 = sc.nextInt();
@@ -361,20 +363,24 @@ public class InventarisTest {
                             System.out.println("Pilihan tidak valid");
                             break;
                         }
+                        case 4:
+                        loop = false;
+                        continue;
+                        
                     }
-                        System.out.println("-------------------------------------");
-                        System.out.println("|    1. Kembali ke Menu Pelaporan   | ");
-                        System.out.println("|    2. Kembali ke Menu Utama       |");
-                        System.out.println("-------------------------------------");
-                        System.out.print("Silahkan pilih opsi 1 atau 2 : ");
-                        int pelaporanLagi = sc.nextInt();
-                        if (pelaporanLagi != 1) {
-                            break;
-                        }
+                    System.out.println("-------------------------------------");
+                    System.out.println("|    1. Kembali ke Menu Pelaporan   | ");
+                    System.out.println("|    2. Kembali ke Menu Utama       |");
+                    System.out.println("-------------------------------------");
+                    System.out.print("Silahkan pilih opsi 1 atau 2 : ");
+                    int pelaporanLagi = sc.nextInt();
+                    if (pelaporanLagi != 1) {
+                        break;
                     }
-                    break;
-                    
-                    case 5:
+                }
+                break;
+                
+                case 5:
                     //Sistem kembali ke menu Log In
                     logIn = false;
                     sc.nextLine();
