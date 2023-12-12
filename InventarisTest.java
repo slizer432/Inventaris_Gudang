@@ -117,13 +117,13 @@ public class InventarisTest {
                 sc.nextLine();
                 jumlah = sc.nextInt();
                 System.out.println("-------------------------------------");
-                System.out.println("|    1. Menambahkan Barang Lagi     | ");
+                System.out.println("|    1. Kembali Menambahkan Barang  | ");
                 System.out.println("|    2. Kembali ke Menu Utama       |");
                 System.out.println("-------------------------------------");
                 System.out.print("Silahkan pilih opsi 1 atau 2 : ");
-                int pilihOpsi = sc.nextInt();
+                int tambahLagi = sc.nextInt();
         
-                riwayat[indeksRiwayat] = "Menambahkan " + barang + " sebanyak " + jumlah + " ke Gudang " + pilihanGudang + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "- Menambahkan " + barang + " sebanyak " + jumlah + " ke Gudang " + pilihanGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
         
                 switch (pilihanGudang) {
@@ -144,7 +144,7 @@ public class InventarisTest {
                         break;
                 }
         
-                if (pilihOpsi != 1) {
+                if (tambahLagi != 1) {
                     break;
                 }
             }
@@ -152,39 +152,50 @@ public class InventarisTest {
 
             // sistem ambil barang
             case 2:
+            while (true) {
             System.out.println("===================================================================================================");
             System.out.println("|                                       AMBIL BARANG                                              |");
             System.out.println("===================================================================================================");
             System.out.print("Pilih nomer gudang yang ingin dikosongkan (1,2,3): ");
             int BarangGudang = sc.nextInt();
             sc.nextLine();
-            
+
             switch (BarangGudang) {
                 case 1:
                 displayGudang(BarangGudang, gudang1);
                 ambilBarang(gudang1);
-                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                riwayat[indeksRiwayat] = "- Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 break;
 
                 case 2:
                 displayGudang(BarangGudang, gudang2);
                 ambilBarang(gudang2);
-                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                riwayat[indeksRiwayat] = "- Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 break;
 
                 case 3:
                 displayGudang(BarangGudang, gudang3);
                 ambilBarang(gudang3);
-                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                riwayat[indeksRiwayat] = "- Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 break;
-
-        }break;
+            } 
+            System.out.println("-------------------------------------");
+            System.out.println("|    1. Kembali Mengambil Barang    | ");
+            System.out.println("|    2. Kembali ke Menu Utama       |");
+            System.out.println("-------------------------------------");
+            System.out.print("Silahkan pilih opsi 1 atau 2 : ");
+            int ambilLagi = sc.nextInt();
+            if (ambilLagi != 1) {
+                    break;
+            }
+        } break;
         
         // sistem Update Barang
         case 3:
+        while (true) {
         System.out.println("===================================================================================================");
         System.out.println("|                                       UPDATE BARANG                                             |");
         System.out.println("===================================================================================================");
@@ -219,19 +230,19 @@ public class InventarisTest {
                             System.out.print("Masukkan nama barang yang baru: ");
                             gudang1[i][0] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Nama Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Nama Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else if (menuUpdate.equals("2")) {
                             System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
                             gudang1[i][2] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Kondisi Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Kondisi Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else if (menuUpdate.equals("3")) {
                             System.out.print("Masukkan deskripsi barang yang baru: ");
                             gudang1[i][3] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Deskripsi Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Deskripsi Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else
                         System.out.println("Input tidak valid");
@@ -266,19 +277,19 @@ public class InventarisTest {
                             System.out.print("Masukkan nama barang yang baru: ");
                             gudang2[i][0] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Nama Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Nama Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else if (menuUpdate.equals("2")) {
                             System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
                             gudang2[i][2] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Kondisi Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Kondisi Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else if (menuUpdate.equals("3")) {
                             System.out.print("Masukkan deskripsi barang yang baru: ");
                             gudang2[i][3] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Deskripsi Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Deskripsi Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else
                         System.out.println("Input tidak valid");
@@ -312,19 +323,19 @@ public class InventarisTest {
                             System.out.print("Masukkan nama barang yang baru: ");
                             gudang3[i][0] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Nama Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Nama Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else if (menuUpdate.equals("2")) {
                             System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
                             gudang3[i][2] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Kondisi Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Kondisi Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else if (menuUpdate.equals("3")) {
                             System.out.print("Masukkan deskripsi barang yang baru: ");
                             gudang3[i][3] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "Mengupdate Deskripsi Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            riwayat[indeksRiwayat] = "- Mengupdate Deskripsi Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else
                         System.out.println("Input tidak valid");
@@ -335,10 +346,21 @@ public class InventarisTest {
                 default:
                 System.out.println("Barang Tidak Ditemukan");
                 break;
-            }break;
+                }
+                System.out.println("-------------------------------------");
+                System.out.println("|    1. Kembali Mengupdate Barang   | ");
+                System.out.println("|    2. Kembali ke Menu Utama       |");
+                System.out.println("-------------------------------------");
+                System.out.print("Silahkan pilih opsi 1 atau 2 : ");
+                int ambilLagi = sc.nextInt();
+                if (ambilLagi != 1) {
+                    break;
+                }
+            } break;
             
             case 4:
             //sistem pelaporan
+            while (true) {
             System.out.println("===================================================================================================");
             System.out.println("|                                          PELAPORAN                                              |");
             System.out.println("===================================================================================================");
@@ -465,7 +487,16 @@ public class InventarisTest {
                             System.out.println("Pilihan tidak valid");
                             break;
                         }
-                        
+                    }
+                        System.out.println("-------------------------------------");
+                        System.out.println("|    1. Kembali ke Menu Pelaporan   | ");
+                        System.out.println("|    2. Kembali ke Menu Utama       |");
+                        System.out.println("-------------------------------------");
+                        System.out.print("Silahkan pilih opsi 1 atau 2 : ");
+                        int pelaporanLagi = sc.nextInt();
+                        if (pelaporanLagi != 1) {
+                            break;
+                        }
                     }
                     break;
                     
