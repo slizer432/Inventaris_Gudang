@@ -163,18 +163,22 @@ public class InventarisTest {
                 case 1:
                 displayGudang(BarangGudang, gudang1);
                 ambilBarang(gudang1);
-                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
                 indeksRiwayat++;
                 break;
 
                 case 2:
                 displayGudang(BarangGudang, gudang2);
                 ambilBarang(gudang2);
+                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                indeksRiwayat++;
                 break;
 
                 case 3:
                 displayGudang(BarangGudang, gudang3);
                 ambilBarang(gudang3);
+                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                indeksRiwayat++;
                 break;
 
         }break;
@@ -215,14 +219,20 @@ public class InventarisTest {
                             System.out.print("Masukkan nama barang yang baru: ");
                             gudang1[i][0] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Nama Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else if (menuUpdate.equals("2")) {
                             System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
                             gudang1[i][2] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Kondisi Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else if (menuUpdate.equals("3")) {
                             System.out.print("Masukkan deskripsi barang yang baru: ");
                             gudang1[i][3] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Deskripsi Barang " + gudang1[i][0] + " dengan kode unik " + barangLama + " di Gudang 1 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else
                         System.out.println("Input tidak valid");
                         break;
@@ -256,14 +266,20 @@ public class InventarisTest {
                             System.out.print("Masukkan nama barang yang baru: ");
                             gudang2[i][0] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Nama Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else if (menuUpdate.equals("2")) {
                             System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
                             gudang2[i][2] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Kondisi Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else if (menuUpdate.equals("3")) {
                             System.out.print("Masukkan deskripsi barang yang baru: ");
                             gudang2[i][3] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Deskripsi Barang " + gudang2[i][0] + " dengan kode unik " + barangLama + " di Gudang 2 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else
                         System.out.println("Input tidak valid");
                         break;
@@ -296,14 +312,20 @@ public class InventarisTest {
                             System.out.print("Masukkan nama barang yang baru: ");
                             gudang3[i][0] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Nama Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else if (menuUpdate.equals("2")) {
                             System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
                             gudang3[i][2] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Kondisi Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else if (menuUpdate.equals("3")) {
                             System.out.print("Masukkan deskripsi barang yang baru: ");
                             gudang3[i][3] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
+                            riwayat[indeksRiwayat] = "Mengupdate Deskripsi Barang " + gudang3[i][0] + " dengan kode unik " + barangLama + " di Gudang 3 oleh " + username + " pada tanggal " + tanggal + "\ndi jam " + waktu;
+                            indeksRiwayat++;
                         }else
                         System.out.println("Input tidak valid");
                         break;
@@ -485,15 +507,6 @@ public class InventarisTest {
     public static void ambilBarang(String[][] gudang) {
         boolean ambilLagi = true;
         while (ambilLagi) {
-            for (int i = 0; i < gudang.length; i++) {
-                if (gudang[i][0] != null) {
-                    System.out.print(gudang[i][0] + "\t: ");
-                    System.out.print(gudang[i][1]);
-                    System.out.print("\tJumlah: " + gudang[i][3]);
-                    System.out.println();
-                }
-            }
-            System.out.println();
             System.out.print("Masukkan kode unik barang: ");
             String unikBarang = sc.nextLine();
             for (int i = 0; i < gudang.length; i++) {
@@ -531,7 +544,7 @@ public class InventarisTest {
                                 System.out.printf("| %-15s | %-15s | %-15s | %-15s |\n",gudang[i][0],gudang[i][1],gudang[i][2],gudang[i][3]);
                             }
                         }
-                        System.out.print("Ketik apapun untuk kembali ke menu: ");
+                        System.out.print("Klik enter untuk melanjutkan");
                         sc.nextLine();
                         sc.nextLine();
     }
