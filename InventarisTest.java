@@ -89,51 +89,66 @@ public class InventarisTest {
         switch (pilihan) {
             // sistem menambah barang
             case 1:
-            System.out.println("===================================================================================================");
-            System.out.println("|                                       TAMBAHKAN BARANG                                          |");
-            System.out.println("===================================================================================================");
-            System.out.print("Masukkan nama barang: ");
-            sc.nextLine();
-            barang = sc.nextLine();
-            do {
-                angkaAcak = (int) (Math.random() * 100000) + 1;
-
-                boolean cekkodeUnik = false;
-                for (int i = 0; i < gudang1.length; i++) {
-                    if (String.valueOf(angkaAcak) == gudang1[i][2] || String.valueOf(angkaAcak) == gudang2[i][2] || String.valueOf(angkaAcak) == gudang3[i][2]) {
-                        cekkodeUnik = true;
+            while (true) {
+                System.out.println("===================================================================================================");
+                System.out.println("|                                       TAMBAHKAN BARANG                                          |");
+                System.out.println("===================================================================================================");
+                System.out.print("Masukkan nama barang: ");
+                sc.nextLine();
+                barang = sc.nextLine();
+                do {
+                    angkaAcak = (int) (Math.random() * 100000) + 1;
+    
+                    boolean cekkodeUnik = false;
+                    for (int i = 0; i < gudang1.length; i++) {
+                        if (String.valueOf(angkaAcak) == gudang1[i][2] || String.valueOf(angkaAcak) == gudang2[i][2] || String.valueOf(angkaAcak) == gudang3[i][2]) {
+                            cekkodeUnik = true;
+                            break;
+                        }
+                    }
+                    if (!cekkodeUnik) {
                         break;
                     }
+                } while (true);
+                System.out.println("Kode unik barang " + angkaAcak);
+                System.out.print("Pilih nomor gudang (1,2,3): ");
+                int pilihanGudang = sc.nextInt();
+                System.out.print("Masukkan jumlah barang: ");
+                sc.nextLine();
+                jumlah = sc.nextInt();
+                System.out.println("-------------------------------------");
+                System.out.println("|    1. Menambahkan Barang Lagi     | ");
+                System.out.println("|    2. Kembali ke Menu Utama       |");
+                System.out.println("-------------------------------------");
+                System.out.print("Silahkan pilih opsi 1 atau 2 : ");
+                int pilihOpsi = sc.nextInt();
+        
+                riwayat[indeksRiwayat] = "Menambahkan " + barang + " sebanyak " + jumlah + " ke Gudang " + pilihanGudang + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
+                indeksRiwayat++;
+        
+                switch (pilihanGudang) {
+                    case 1:
+                        tambahBarang(gudang1);
+                        break;
+        
+                    case 2:
+                        tambahBarang(gudang2);
+                        break;
+        
+                    case 3:
+                        tambahBarang(gudang3);
+                        break;
+        
+                    default:
+                        System.out.println("Masukan tidak valid");
+                        break;
                 }
-                if (!cekkodeUnik) {
+        
+                if (pilihOpsi != 1) {
                     break;
                 }
-            } while (true);
-            System.out.print("Pilih nomer gudang (1,2,3): ");
-            int pilihanGudang = sc.nextInt();
-            System.out.print("Masukkan jumlah barang: ");
-            sc.nextLine();
-            jumlah = sc.nextInt();
-            riwayat[indeksRiwayat] = "Menambahkan " + barang +" sebanyak " + jumlah + " ke Gudang " + pilihanGudang + " oleh " + username + " pada tanggal " + tanggal + " di jam " + waktu;
-            indeksRiwayat++;
-            switch (pilihanGudang) {
-                case 1:
-                tambahBarang(gudang1);
-                break;
-                
-                case 2:
-                tambahBarang(gudang2);
-                break;
-                
-                case 3:
-                tambahBarang(gudang3);
-                break;
-                
-                default:
-                System.out.println("Masukan tidak valid");
-                break;
-                
-                } break;
+            }
+            break;
 
             // sistem ambil barang
             case 2:
@@ -451,9 +466,6 @@ public class InventarisTest {
     }
     
     public static void tambahBarang(String[][] gudang) {
-        boolean tambahLagi = true;
-
-        while (tambahLagi) {
             for (int i = 0; i < gudang.length; i++) {
                 if (gudang[i][0] != null && gudang[i][0].equalsIgnoreCase(barang)) {
                     int jumlahBarang = Integer.parseInt(gudang[i][3]);
@@ -461,7 +473,6 @@ public class InventarisTest {
                     gudang[i][3] = String.valueOf(jumlahBarang);
                     break;
                 } else if (gudang[i][0] == null) {
-                    System.out.println("Kode unik barang: " + angkaAcak);
                     gudang[i][0] = barang;
                     gudang[i][1] = String.valueOf(angkaAcak);
                     gudang[i][2] = "Baik";
@@ -469,19 +480,8 @@ public class InventarisTest {
                     break;
                 }
             }
-
-            System.out.println("Barang berhasil ditambahkan!");
-            System.out.print("Apakah anda ingin menambahkan barang lagi? (y/n): ");
-            sc.nextLine(); 
-            String jawaban = sc.nextLine();
-
-            if (jawaban.equalsIgnoreCase("y")) {
-                tambahLagi = true;
-            } else {
-                tambahLagi = false;
-            }
         }
-    }
+    
     public static void ambilBarang(String[][] gudang) {
         boolean ambilLagi = true;
         while (ambilLagi) {
