@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -26,11 +28,11 @@ public class InventarisTest {
     gudang1[1][0] = "Laptop Asus";
     gudang1[1][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang1[1][2] = "Baik";
-    gudang1[1][3] = "7";
+    gudang1[1][3] = "9";
     gudang1[2][0] = "Keyboard Rexus";
     gudang1[2][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang1[2][2] = "Rusak";
-    gudang1[2][3] = "9";
+    gudang1[2][3] = "3";
     gudang2[0][0] = "Headset Logitech";
     gudang2[0][1] = String.valueOf((int) (Math.random() * 100000) + 1);
     gudang2[0][2] = "Baik";
@@ -203,7 +205,7 @@ public class InventarisTest {
             System.out.println("Barang di Gudang " + pilGudang + ":");
             switch (pilGudang) {
                 case 1:
-                displayGudang(pilGudang, gudang1);
+                displayGudang(pilGudang, gudang1);;
                 updateGudang(1, gudang1);
                 break;
 
@@ -254,20 +256,57 @@ public class InventarisTest {
                     System.out.println("===================================================================================================");
                     System.out.print("Pilih gudang (1,2,3): ");
                     int pilhGud = sc.nextInt();
+                    System.out.println("--------------------------");
+                    System.out.println("|  Sortir berdasarkan:   |");
+                    System.out.println("|   1. Jumlah            |");
+                    System.out.println("|   2. Nama              |");
+                    System.out.println("--------------------------");
+                    System.out.print("Pilih opsi: ");
+                    int sortir = sc.nextInt();
                     switch (pilhGud) {
                         case 1:
-                        displayGudang(1, gudang1);
-                        sc.nextLine();
+                        switch (sortir) {
+                            case 1:
+                            displayGudangJumlah(pilhGud, gudang1);
+                            sc.nextLine();
+                                break;
+                            case 2:
+                            displayGudangHuruf(pilhGud, gudang1);
+                            sc.nextLine();
+                            default:
+                            System.out.println("Input tidak valid");
+                                break;
+                        }
                         break;
                         
                         case 2:
-                        displayGudang(2, gudang2);
-                        sc.nextLine();
+                        switch (sortir) {
+                            case 1:
+                            displayGudangJumlah(pilhGud, gudang2);
+                            sc.nextLine();
+                                break;
+                            case 2:
+                            displayGudangHuruf(pilhGud, gudang2);
+                            sc.nextLine();
+                            default:
+                            System.out.println("Input tidak valid");
+                                break;
+                        }
                         break;
                         
                         case 3:
-                        displayGudang(3, gudang3);
-                        sc.nextLine();
+                        switch (sortir) {
+                            case 1:
+                            displayGudangJumlah(pilhGud, gudang2);
+                            sc.nextLine();
+                                break;
+                            case 2:
+                            displayGudangHuruf(pilhGud, gudang2);
+                            sc.nextLine();
+                            default:
+                            System.out.println("Input tidak valid");
+                                break;
+                        }
                         break;
                         
                     }break;
@@ -498,6 +537,25 @@ public class InventarisTest {
                         sc.nextLine();
     }
 
+    public static void displayGudangJumlah(int nomer, String[][] gudang) {
+    // Sort the array based on the quantity (assuming quantity is stored as integers in gudang[i][3])
+    Arrays.sort(gudang, Comparator.comparingInt(arr -> arr[3] != null ? Integer.parseInt(arr[3]) : 0));
+
+    // Rest of the code remains the same as the original function
+    System.out.println("=============================================================================================");
+    System.out.println("|                                    LIST BARANG GUDANG " + nomer + "                                   |");
+    System.out.println("=============================================================================================");
+    System.out.printf("| %-20s | %-20s | %-20s | %-20s |\n", "Nama", "Kode", "Kondisi", "Jumlah");
+    System.out.println("=============================================================================================");
+    for (int i = 0; i < gudang.length; i++) {
+        if (gudang[i][0] != null) {
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s |\n", gudang[i][0], gudang[i][1], gudang[i][2], gudang[i][3]);
+        }
+    }
+    System.out.print("Klik enter untuk melanjutkan");
+    sc.nextLine();
+}
+
     public static void updateGudang (int angka, String[][] gudang) {
                 System.out.println();
                 sc.nextLine();
@@ -538,4 +596,24 @@ public class InventarisTest {
                     }
                 }
     }
-}
+    public static void displayGudangHuruf(int nomer, String[][] gudang) {
+        // Sort the array based on the item names (assuming names are stored in gudang[i][0])
+        Arrays.sort(gudang, Comparator.comparing(arr -> {
+            String itemName = arr[0];
+            return itemName != null ? itemName : "";
+        }));
+    
+        // Rest of the code remains the same as the original function
+        System.out.println("=============================================================================================");
+        System.out.println("|                                    LIST BARANG GUDANG " + nomer + "                                   |");
+        System.out.println("=============================================================================================");
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s |\n", "Nama", "Kode", "Kondisi", "Jumlah");
+        System.out.println("=============================================================================================");
+        for (int i = 0; i < gudang.length; i++) {
+            if (gudang[i][0] != null) {
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s |\n", gudang[i][0], gudang[i][1], gudang[i][2], gudang[i][3]);
+            }
+        }
+        System.out.print("Klik enter untuk melanjutkan");
+        sc.nextLine();
+    }}
