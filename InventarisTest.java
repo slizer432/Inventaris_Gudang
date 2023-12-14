@@ -398,8 +398,8 @@ public class InventarisTest {
                     System.out.println("================================================================================================");
                     System.out.println("|                       Jangan Lupa Follow Media Sosial Kami Di Bawah Ini!                     |");
                     System.out.println("|                                                                                              |");
-                    System.out.println("|                                                                                              |");
-                    System.out.println("|                                                                                              |");
+                    System.out.println("|                                    (Nova)   IG:vaezara                                       |");
+                    System.out.println("|                                    (Heru)   IG:re_heru.a                                     |");
                     System.out.println("|                                    (Billy)  IG:exzbee                                        |");
                     System.out.println("================================================================================================");
                     System.out.println("================================================================================================");
