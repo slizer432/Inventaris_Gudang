@@ -351,7 +351,7 @@ public class InventarisTest {
                             String keywordNamaBarang = sc.nextLine();
                             int number = 1;
                             for (int i = 0; i < gudang1.length; i++) {
-                                if (keywordNamaBarang.equalsIgnoreCase(gudang1[i][0])) {
+                                if (gudang1[i][0]!=null && gudang1[i][0].contains(keywordNamaBarang)) {
                                     System.out.println(number +". "+  gudang1[i][0] + " Terdapat pada gudang 1 di urutan ke-" + (i+1)+" dengan kode unik " + gudang1[i][1]);
                                     number++;
                                 }
@@ -359,7 +359,7 @@ public class InventarisTest {
                             
                             // pencarian di gudang 2                            
                             for (int i = 0; i < gudang2.length; i++) {
-                                if (keywordNamaBarang.equalsIgnoreCase(gudang2[i][0])) {
+                                if (gudang2[i][0]!=null && gudang2[i][0].contains(keywordNamaBarang)) {
                                     System.out.println(number +". "+  gudang2[i][0] + " Terdapat pada gudang 2 di urutan ke-" + (i+1) + " dengan kode unik " + gudang2[i][1]);
                                     number++;
                                 }
@@ -367,7 +367,7 @@ public class InventarisTest {
                             
                             // pencarian di gudang 3
                             for (int i = 0; i < gudang3.length; i++) {
-                                if (keywordNamaBarang.equalsIgnoreCase(gudang3[i][0])) {
+                                if (gudang3[i][0]!=null && gudang3[i][0].contains(keywordNamaBarang)) {
                                     System.out.println(number +". "+  gudang3[i][0]  + " Terdapat pada gudang 3 di urutan ke-"+(i+1)+ " dengan kode unik " + gudang3[i][1]);
                                     number++;
                                 }
