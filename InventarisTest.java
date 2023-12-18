@@ -118,7 +118,7 @@ public class InventarisTest {
                 sc.nextLine();
                 jumlah = sc.nextInt();
                 
-                riwayat[indeksRiwayat] = "- Menambahkan " + barang + " sebanyak " + jumlah + " ke Gudang " + pilihanGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Menambahkan " + barang + " sebanyak " + jumlah + " ke Gudang " + pilihanGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 
                 switch (pilihanGudang) {
@@ -165,21 +165,21 @@ public class InventarisTest {
                 case 1:
                 displayGudang(BarangGudang, gudang1);
                 ambilBarang(gudang1);
-                riwayat[indeksRiwayat] = "- Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 break;
 
                 case 2:
                 displayGudang(BarangGudang, gudang2);
                 ambilBarang(gudang2);
-                riwayat[indeksRiwayat] = "- Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 break;
 
                 case 3:
                 displayGudang(BarangGudang, gudang3);
                 ambilBarang(gudang3);
-                riwayat[indeksRiwayat] = "- Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                riwayat[indeksRiwayat] = "Mengambil " + barang +" sebanyak " + jumlah + " dari Gudang " + BarangGudang + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                 indeksRiwayat++;
                 break;
             } 
@@ -318,8 +318,10 @@ public class InventarisTest {
                     System.out.println("===================================================================================================");
                     System.out.println("|                                            RIWAYAT                                              |");
                     System.out.println("===================================================================================================");
+                    int nomer = 1;
                     for (int i = 0; i < indeksRiwayat; i++) {
-                        System.out.println(riwayat[i]);
+                        System.out.println(nomer + ". " + riwayat[i]);
+                        nomer++;
                     } 
                     if (riwayat[0] == null) {
                         System.out.println("Masih belum ada aktivitas");
@@ -352,7 +354,7 @@ public class InventarisTest {
                             int number = 1;
                             for (int i = 0; i < gudang1.length; i++) {
                                 if (gudang1[i][0]!=null && gudang1[i][0].contains(keywordNamaBarang)) {
-                                    System.out.println(number +". "+  gudang1[i][0] + " Terdapat pada gudang 1 di urutan ke-" + (i+1)+" dengan kode unik " + gudang1[i][1]);
+                                    System.out.println(number +". "+  gudang1[i][0] + " Terdapat pada gudang 1 dengan kode unik " + gudang1[i][1]);
                                     number++;
                                 }
                             }
@@ -360,7 +362,7 @@ public class InventarisTest {
                             // pencarian di gudang 2                            
                             for (int i = 0; i < gudang2.length; i++) {
                                 if (gudang2[i][0]!=null && gudang2[i][0].contains(keywordNamaBarang)) {
-                                    System.out.println(number +". "+  gudang2[i][0] + " Terdapat pada gudang 2 di urutan ke-" + (i+1) + " dengan kode unik " + gudang2[i][1]);
+                                    System.out.println(number +". "+  gudang2[i][0] + " Terdapat pada gudang 2 dengan kode unik " + gudang2[i][1]);
                                     number++;
                                 }
                             }
@@ -368,9 +370,12 @@ public class InventarisTest {
                             // pencarian di gudang 3
                             for (int i = 0; i < gudang3.length; i++) {
                                 if (gudang3[i][0]!=null && gudang3[i][0].contains(keywordNamaBarang)) {
-                                    System.out.println(number +". "+  gudang3[i][0]  + " Terdapat pada gudang 3 di urutan ke-"+(i+1)+ " dengan kode unik " + gudang3[i][1]);
+                                    System.out.println(number +". "+  gudang3[i][0]  + " Terdapat pada gudang 3 dengan kode unik " + gudang3[i][1]);
                                     number++;
                                 }
+                            }
+                            if (number == 1) {
+                                System.out.println("Barang tidak ditemukan");
                             }
                             number = 1;
                             break;
@@ -380,24 +385,32 @@ public class InventarisTest {
                             System.out.print("Masukkan keyword (kode unik barang): ");
                             sc.nextLine();
                             String keywordKodeUnik = sc.nextLine();
+                            boolean kosong = true;
 
                             // sistem pencarian di gudang 1
                             for (int i = 0; i < gudang1.length; i++) {
                                 if (keywordKodeUnik.equalsIgnoreCase(gudang1[i][1])) {
-                                    System.out.println("Barang yang anda cari terdapat di gudang 1 di urutan ke-"+ (i+1));
+                                    System.out.println("Barang yang anda cari terdapat di gudang 1 dengan nama " + gudang1[i][0] + "dan stok sebanyak " + gudang1[i][3]);
+                                    kosong = false;
                                 }
                             }
                             // sistem pencarian di gudang 2
                             for (int i = 0; i < gudang2.length; i++) {
                                 if (keywordKodeUnik.equalsIgnoreCase(gudang2[i][1])) {
-                                    System.out.println("Barang yang anda cari terdapat di gudang 2 di urutan ke-"+ (i+1));
+                                    System.out.println("Barang yang anda cari terdapat di gudang 2 dengan nama " + gudang2[i][0] + "dan stok sebanyak " + gudang2[i][3]);
+                                    kosong = false;
                                 }
                             }
                             // sistem pencarian di gudang 3
                             for (int i = 0; i < gudang3.length; i++) {
                                 if (keywordKodeUnik.equalsIgnoreCase(gudang3[i][1])) {
-                                    System.out.println("Barang yang anda cari terdapat di gudang 3 di urutan ke-"+ (i+1));
+                                    System.out.println("Barang yang anda cari terdapat di gudang 3 dengan nama " + gudang3[i][0] + "dan stok sebanyak " + gudang3[i][3]);
+                                    kosong = false;
                                 }
+                            }
+                            
+                            if (kosong == true) {
+                                System.out.println("Barang tidak ditemukan");
                             }
                             break;
                             
@@ -576,19 +589,19 @@ public class InventarisTest {
                             System.out.print("Masukkan nama kategori barang yang baru: ");
                             gudang[i][0] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Nama Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang "+ angka +" oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                            riwayat[indeksRiwayat] = "Mengupdate Nama Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang "+ angka +" oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else if (menuUpdate.equals("2")) {
                             System.out.print("Masukkan kondisi barang sekarang (Baik/Rusak): ");
                             gudang[i][2] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Kondisi Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang "+ angka +" oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                            riwayat[indeksRiwayat] = "Mengupdate Kondisi Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang "+ angka +" oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else if (menuUpdate.equals("3")) {
                             System.out.print("Masukkan jumlah barang yang baru: ");
                             gudang[i][3] = sc.nextLine();
                             System.out.println("Barang Berhasil di Update");
-                            riwayat[indeksRiwayat] = "- Mengupdate Jumlah Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang " + angka + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
+                            riwayat[indeksRiwayat] = "Mengupdate Jumlah Barang " + gudang[i][0] + " dengan kode unik " + barangLama + " di Gudang " + angka + " oleh " + username + "\n  pada tanggal " + tanggal + " di jam " + waktu;
                             indeksRiwayat++;
                         }else
                         System.out.println("Input tidak valid");
